@@ -1,0 +1,52 @@
+{
+  "name": "soundclout-active-player-module",
+  "version": "1.0.0",
+  "description": "This features an animated player synced proportionally with a time-stamped location in a song. Its clickable components include a play/pause toggle button, fastforward/rewind buttons, shuffle/repeat buttons, hover volume control, album thumbnails, a like button, and a \"up next\" pop up menu.  The \"up next\" pop up menu also features a button to clear the list, a toggle to autoplay upcoming tracks, as well as like buttons and a pop-up options menu for each track.  The menu allows you to like, share, add or remove from \"next up\", add to a playlist, or start a radio station of related tracks.",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "db": "mysql -u root -pyourpassword < ./database/data/schema.sql",
+    "build": "webpack -w",
+    "start": "nodemon ./server/index.js localhost 3020"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LilCare/soundclout-active-player-module.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LilCare/soundclout-active-player-module/issues"
+  },
+  "homepage": "https://github.com/LilCare/soundclout-active-player-module#readme",
+  "devDependencies": {
+    "@babel/core": "^7.6.4",
+    "@babel/preset-env": "^7.6.3",
+    "@babel/preset-react": "^7.6.3",
+    "babel-loader": "^8.0.6",
+    "enzyme": "^3.10.0",
+    "enzyme-adapter-react-16": "^1.15.0",
+    "enzyme-adapter-react-16.1": "^1.6.1",
+    "eslint": "^6.5.1",
+    "eslint-config-airbnb": "^18.0.1",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-react": "^7.16.0",
+    "eslint-plugin-react-hooks": "^1.7.0",
+    "jest": "^24.9.0",
+    "webpack": "^4.41.0",
+    "webpack-cli": "^3.3.9"
+  },
+  "dependencies": {
+    "axios": "^0.19.0",
+    "bluebird": "^3.7.0",
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "mysql": "^2.17.1",
+    "path": "^0.12.7",
+    "react": "^16.10.2",
+    "react-dom": "^16.10.2",
+    "sequelize": "^5.19.5"
+  }
+}
