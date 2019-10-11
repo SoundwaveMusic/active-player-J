@@ -3,7 +3,6 @@ const db = require('../index');
 
 module.exports = Promise.promisifyAll({
   songSaver: (song, cb) => {
-    // TBD: write code to generate a single song instance
     const stmt = `insert into songs (length, timestamp, isliked, songfile, title, artist, album, thumbnail) 
                values (?, ?, ?, ?, ?, ?, ?, ?)
               `;
@@ -22,7 +21,6 @@ module.exports = Promise.promisifyAll({
       .catch((err) => cb(err));
   },
   playlistSaver: (songid, playlist, cb) => {
-    // TBD: write code to generate a single upNext play instance
     const stmt = `insert into ${playlist} (songid) 
                values (?)
               `;
@@ -35,6 +33,12 @@ module.exports = Promise.promisifyAll({
     const stmt = 'SELECT * FROM songs WHERE id = ?';
     const songVal = [songid];
     db.queryAsync(stmt, songVal)
+      .then((results) => cb(null, results))
+      .catch((err) => cb(err));
+  },
+  playlistGetter: (playlist, cb) => {
+    const stmt = `SELECT * FROM ${playlist}`;
+    db.queryAsync(stmt)
       .then((results) => cb(null, results))
       .catch((err) => cb(err));
   },
