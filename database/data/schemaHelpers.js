@@ -6,7 +6,7 @@ module.exports = {
     const stmt = `insert into songs (length, timestamp, isliked, songfile, title, artist, album, thumbnail) 
                values (?, ?, ?, ?, ?, ?, ?, ?)
               `;
-    let songVals = [
+    const songVals = [
       song.length,
       song.timestamp,
       song.isliked,
@@ -20,11 +20,14 @@ module.exports = {
       .then(results => cb(null, results))
       .catch(err => cb(err));
   },
-  upNext: () => {
+  upNextGenerator: (songid, cb = (err, results) => console.log(err, results)) => {
     // TBD: write code to generate a single upNext play instance
-  }
+    const stmt = `insert into upnext (songid) 
+               values (?)
+              `;
+    const songVal = [songid];
+    db.queryAsync(stmt, songVal)
+      .then(results => cb(null, results))
+      .catch(err => cb(err));
+  },
 };
-
-/*
-insert into songs (length, timestamp, isliked, songfile, title, artist, album, thumbnail) values (189, 0, 1, "www.songFile", "A Song I like", "An Artist", "A Great Album", "www.thumbnailLoc");
-*/

@@ -1,21 +1,39 @@
 const Promise = require('bluebird');
-const schema = require('./data/schemaHelpers');
+const faker = require('faker');
+const schema = Promise.promisifyAll(require('./data/schemaHelpers'));
 
 // note default properties: id, timestamp, and isliked
-const sampleSong = {
-  length: 167,
-  songfile: 'www.acoolsongfile.com',
-  title: 'A Cool Song',
-  artist: 'Cool One',
-  album: 'These are Great!',
-  thumbnail: 'www.reallysmallpic.com',
-};
+// const sampleSong = {
+//   length: Math.floor(Math.random() * (210 - 100) + 100),
+//   timestamp: 0,
+//   isliked: 0,
+//   songfile: faker.internet.url(),
+//   title: faker.random.words(),
+//   artist: faker.name.findName(),
+//   album: faker.commerce.productName(),
+//   thumbnail: faker.image.imageUrl(),
+// };
+
+// console.log(sampleSong);
 
 const seedData = () => {
-  schema.songGenerator(sampleSong, (err, results) => {
-    if (err) console.log('err', err);
-    console.log('results', results);
-  });
+  for (let i = 0; i < 100; i += 1) {
+    let sampleSong = {
+      length: Math.floor(Math.random() * (210 - 100) + 100),
+      timestamp: 0,
+      isliked: Math.floor(Math.random() * 2),
+      songfile: faker.internet.url(),
+      title: faker.random.words(),
+      artist: faker.name.findName(),
+      album: faker.commerce.productName(),
+      thumbnail: faker.image.imageUrl(),
+    };
+    schema.songGeneratorAsync(sampleSong)
+      .then((results) => schema.upNextGeneratorAsync(results.insertId))
+      .then((results) => console.log('upNextGeneratorAsync result', results))
+      .catch((err) => console.log('upNextGeneratorAsync err', err));
+  }
+  
 };
 
 seedData();
