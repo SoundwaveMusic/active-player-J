@@ -28,8 +28,8 @@ const seedData = () => {
       album: faker.commerce.productName(),
       thumbnail: faker.image.imageUrl(),
     };
-    schema.songGeneratorAsync(sampleSong)
-      .then((results) => schema.upNextGeneratorAsync(results.insertId))
+    schema.songSaverAsync(sampleSong)
+      .then((results) => schema.playlistSaverAsync(results.insertId, 'upnext'))
       .then((results) => console.log('upNextGeneratorAsync result', results))
       .catch((err) => console.log('upNextGeneratorAsync err', err));
   }
