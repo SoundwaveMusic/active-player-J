@@ -1,6 +1,7 @@
+const Promise = require('bluebird');
 const db = require('../index');
 
-module.exports = {
+module.exports = Promise.promisifyAll({
   songSaver: (song, cb) => {
     // TBD: write code to generate a single song instance
     const stmt = `insert into songs (length, timestamp, isliked, songfile, title, artist, album, thumbnail) 
@@ -31,13 +32,17 @@ module.exports = {
       .catch((err) => cb(err));
   },
   songGetter: (songid, cb) => {
-    const stmt = `SELECT * FROM songs WHERE id = ?
-                ORDER BY id ASC
-                LIMIT 1
-                `;
+    const stmt = 'SELECT * FROM songs WHERE id = ?';
     const songVal = [songid];
     db.queryAsync(stmt, songVal)
       .then((results) => cb(null, results))
       .catch((err) => cb(err));
   },
-};
+});
+
+/* Limit to first song:
+
+                ORDER BY position ASC
+                LIMIT 1
+                
+*/

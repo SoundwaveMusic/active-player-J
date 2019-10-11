@@ -1,20 +1,5 @@
-const Promise = require('bluebird');
 const faker = require('faker');
-const schema = Promise.promisifyAll(require('./data/schemaHelpers'));
-
-// note default properties: id, timestamp, and isliked
-// const sampleSong = {
-//   length: Math.floor(Math.random() * (210 - 100) + 100),
-//   timestamp: 0,
-//   isliked: 0,
-//   songfile: faker.internet.url(),
-//   title: faker.random.words(),
-//   artist: faker.name.findName(),
-//   album: faker.commerce.productName(),
-//   thumbnail: faker.image.imageUrl(),
-// };
-
-// console.log(sampleSong);
+const schema = require('./data/schemaHelpers');
 
 const seedData = () => {
   for (let i = 0; i < 100; i += 1) {
@@ -33,7 +18,6 @@ const seedData = () => {
       .then((results) => console.log('upNextGeneratorAsync result', results))
       .catch((err) => console.log('upNextGeneratorAsync err', err));
   }
-  
 };
 
 seedData();
