@@ -42,11 +42,24 @@ module.exports = Promise.promisifyAll({
       .then((results) => cb(null, results))
       .catch((err) => cb(err));
   },
+  timestampUpdater: (songid, timestamp, cb) => {
+    const stmt = `update songs SET timestamp = ${timestamp}
+                  where id = ${songid}
+                  `;
+    db.queryAsync(stmt)
+      .then((results) => cb(null, results))
+      .catch((err) => cb(err));
+  },
 });
 
 /* Limit to first song:
 
                 ORDER BY position ASC
                 LIMIT 1
-                
+
+UPDATE [LOW_PRIORITY] [IGNORE] table_reference
+    SET assignment_list
+    [WHERE where_condition]
+    [ORDER BY ...]
+    [LIMIT row_count]
 */
