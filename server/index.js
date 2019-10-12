@@ -9,10 +9,12 @@ const jsonParser = bodyParser.json()
 
 app.use(express.static(path.join(__dirname, '../public')));
 
-app.get('/play/:songid', cb.play);
+app.get('/play/:songid', cb.getPlay);
 
-app.get('/:playlist', cb.playlist);
+app.get('/:playlist', cb.getPlaylist);
 
-app.post('/pause/:songid', jsonParser, cb.pause);
+app.post('/timestamp/:songid', jsonParser, cb.timestampEntry);
+
+app.post('/playlist/:songid', jsonParser, cb.playlistEntry);
 
 app.listen(3020);

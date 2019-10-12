@@ -9,11 +9,11 @@ CREATE TABLE songs (
   length INT NOT NULL,
   timestamp INT DEFAULT 0,
   isliked TINYINT DEFAULT 0,
-  songfile VARCHAR(50),
-  title VARCHAR(50),
-  artist VARCHAR(30),
-  album VARCHAR(30),
-  thumbnail VARCHAR(40),
+  songfile VARCHAR(150),
+  title VARCHAR(150),
+  artist VARCHAR(60),
+  album VARCHAR(60),
+  thumbnail VARCHAR(150),
   PRIMARY KEY (id)
 );
 

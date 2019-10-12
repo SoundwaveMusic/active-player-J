@@ -1,20 +1,24 @@
 const schema = require('../database/data/schemaHelpers');
 
 module.exports = {
-  play: (req, res) => {
+  getPlay: (req, res) => {
     schema.songGetterAsync(req.params.songid)
       .then((results) => res.send(results))
       .catch((err) => res.send(err));
   },
-  playlist: (req, res) => {
+  getPlaylist: (req, res) => {
     schema.playlistGetterAsync(req.params.playlist)
       .then((results) => res.send(results))
       .catch((err) => res.send(err));
   },
-  pause: (req, res) => {
-    console.log('songid: ', req.params.songid);
-    console.log('song timestamp: ', req.body.timestamp);
+  timestampEntry: (req, res) => {
     schema.timestampUpdaterAsync(req.params.songid, req.body.timestamp)
+      .then((results) => res.send(results))
+      .catch((err) => res.send(err));
+  },
+  playlistEntry: (req, res) => {
+    console.log(req.params.songid, req.body.playlist);
+    schema.playlistSaverAsync(req.params.songid, req.body.playlist)
       .then((results) => res.send(results))
       .catch((err) => res.send(err));
   },
