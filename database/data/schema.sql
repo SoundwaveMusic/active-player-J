@@ -18,8 +18,8 @@ CREATE TABLE songs (
 );
 
 CREATE TABLE upnext (
-  songid INT,
   position INT AUTO_INCREMENT,
+  songid INT,
   FOREIGN KEY (songid) 
     REFERENCES songs(id)
     ON UPDATE CASCADE,
@@ -27,8 +27,8 @@ CREATE TABLE upnext (
 );
 
 CREATE TABLE previousplays (
-  songid INT,
   position INT AUTO_INCREMENT,
+  songid INT,
   FOREIGN KEY (songid) 
     REFERENCES songs(id)
     ON UPDATE CASCADE,

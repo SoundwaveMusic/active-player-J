@@ -4,6 +4,7 @@ const path = require('path');
 const cb = require('./routeCallbacks');
 
 const app = express();
+const port = 3020;
 
 const jsonParser = bodyParser.json()
 
@@ -17,4 +18,4 @@ app.post('/timestamp/:songid', jsonParser, cb.timestampEntry);
 
 app.post('/playlist/:songid', jsonParser, cb.playlistEntry);
 
-app.listen(3020);
+app.listen(port);
