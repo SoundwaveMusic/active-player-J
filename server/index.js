@@ -16,6 +16,6 @@ app.get('/:playlist', cb.getPlaylist);
 
 app.post('/timestamp/:songid', jsonParser, cb.timestampEntry);
 
-app.post('/playlist/:songid', jsonParser, cb.playlistEntry);
+app.post('/playlist/:playlist', jsonParser, cb.playlistEntry);
 
 app.listen(port);

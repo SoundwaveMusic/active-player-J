@@ -3,7 +3,7 @@ const schema = require('./data/schemaHelpers');
 
 const seedData = () => {
   for (let i = 0; i < 100; i += 1) {
-    let sampleSong = {
+    const sampleSong = {
       length: Math.floor(Math.random() * (210 - 100) + 100),
       timestamp: 0,
       isliked: Math.floor(Math.random() * 2),
