@@ -1,8 +1,6 @@
-const faker = require('faker');
-
 module.exports = [
   {
-    id: 141,
+    songId: 141,
     length: 571,
     timestamp: 0,
     isliked: Math.floor(Math.random() * 2),
@@ -11,16 +9,5 @@ module.exports = [
     artist: 'Kurt Vile',
     album: 'Wakin on a Pretty Daze',
     thumbnail: 'https://sound-clout.s3-us-west-1.amazonaws.com/SummerDaze.jpeg',
-  },
-  {
-    // songid: Math.floor(Math.random() * 999),
-    length: Math.floor(Math.random() * (500 - 100) + 100),
-    timestamp: 0,
-    isliked: Math.floor(Math.random() * 2),
-    songfile: faker.internet.url(),
-    title: faker.random.words(),
-    artist: faker.name.findName(),
-    album: faker.commerce.productName(),
-    thumbnail: faker.image.imageUrl(),
-  },
+  }
 ];

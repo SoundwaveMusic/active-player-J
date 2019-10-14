@@ -6,6 +6,7 @@ USE soundClout;
 
 CREATE TABLE songs (
   id INT NOT NULL AUTO_INCREMENT,
+  songId INT NOT NULL,
   length INT NOT NULL,
   timestamp INT DEFAULT 0,
   isliked TINYINT DEFAULT 0,
