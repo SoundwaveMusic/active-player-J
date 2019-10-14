@@ -1,18 +1,10 @@
-const faker = require('faker');
 const schema = require('./data/schemaHelpers');
+const exampleSongs = require('./data/exampleSongs');
 
 const seedData = () => {
-  for (let i = 0; i < 100; i += 1) {
-    const sampleSong = {
-      length: Math.floor(Math.random() * (210 - 100) + 100),
-      timestamp: 0,
-      isliked: Math.floor(Math.random() * 2),
-      songfile: faker.internet.url(),
-      title: faker.random.words(),
-      artist: faker.name.findName(),
-      album: faker.commerce.productName(),
-      thumbnail: faker.image.imageUrl(),
-    };
+  for (let i = 0; i < 15; i += 1) {
+    // If no song at that index, use the last song (uses faker data to fill in details)
+    const sampleSong = exampleSongs[i] || exampleSongs[exampleSongs.length - 1];
     schema.songSaverAsync(sampleSong)
       .then((results) => schema.playlistSaverAsync(results.insertId, 'upnext'))
       .then((results) => console.log('upNextGeneratorAsync result', results))

@@ -6,7 +6,6 @@ USE soundClout;
 
 CREATE TABLE songs (
   id INT NOT NULL AUTO_INCREMENT,
-  songid INT NOT NULL,
   length INT NOT NULL,
   timestamp INT DEFAULT 0,
   isliked TINYINT DEFAULT 0,
@@ -15,8 +14,7 @@ CREATE TABLE songs (
   artist VARCHAR(60),
   album VARCHAR(60),
   thumbnail VARCHAR(150),
-  PRIMARY KEY (id),
-  UNIQUE KEY (songid)
+  PRIMARY KEY (id)
 );
 
 CREATE TABLE upnext (
