@@ -59,16 +59,29 @@ PLAYER BUTTONS
     cursor: pointer;
     background-repeat: no-repeat;
     background-position: center;
+    background-size: 85%; 
 }
 
 #play {
     background-image: url("https://icon-library.net/images/play-icon-white-png/play-icon-white-png-28.jpg");
-    background-size: 85%;   
 }
-
-
 
 #pause {
     background-image: url("https://iconsplace.com/wp-content/uploads/_icons/000000/256/png/pause-icon-256.png");
-    background-size: 85%;
+}
+
+#back {
+    background-image: url("https://www.shareicon.net/data/128x128/2016/11/14/851932_backward_512x512.png");
+}
+
+#next {
+    background-image: url("https://www.shareicon.net/data/128x128/2016/11/14/851930_forward_512x512.png");
+}
+
+#shuffle {
+    background-image: url("http://simpleicon.com/wp-content/uploads/shuffle.png");
+}
+
+#repeat {
+    background-image: url("https://cdn4.iconfinder.com/data/icons/ui-controls-editor/32/interface-controls-repeat-512.png");
 }

@@ -21,18 +21,13 @@ class App extends React.Component {
     const { playerSong, songFile } = this.state;
 
     return (
-      <div>
-        <header>
-          <h1>Active Player</h1>
-        </header>
-        <footer>
-          {songFile && songFile.paused ? (
-            <Play playSong={() => helpers.togglePlay(songFile)} />
-          ) : (
-            <Pause pauseSong={() => helpers.togglePlay(songFile)} />
-          )}
-        </footer>
-      </div>
+      <footer>
+        {songFile && songFile.paused ? (
+          <Play playSong={() => helpers.togglePlay(songFile)} />
+        ) : (
+          <Pause pauseSong={() => helpers.togglePlay(songFile)} />
+        )}
+      </footer>
     );
   }
 }
