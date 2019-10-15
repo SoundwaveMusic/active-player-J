@@ -4,9 +4,9 @@ import PropTypes from 'prop-types';
 
 function Play({ playSong }) {
   return (
-    <div>
+    <span>
       <button type="button" id="play" className="button" onClick={playSong} />
-    </div>
+    </span>
   );
 }
 

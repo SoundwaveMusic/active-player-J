@@ -4,9 +4,9 @@ import PropTypes from 'prop-types';
 
 function Pause({ pauseSong }) {
   return (
-    <div>
+    <span>
       <button type="button" id="pause" className="button" onClick={pauseSong} />
-    </div>
+    </span>
   );
 }
 

@@ -4,9 +4,9 @@ import PropTypes from 'prop-types';
 
 function Button({ id }) {
   return (
-    <div>
+    <span>
       <button type="button" id={id} className="button" onClick={() => alert(`Clicked ${id}!`)} />
-    </div>
+    </span>
   );
 }
 
