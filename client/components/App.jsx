@@ -1,6 +1,5 @@
+/* eslint-disable jsx-a11y/media-has-caption */
 import React from 'react';
-import axios from 'axios';
-import PlayerSound from './PlayerSound';
 import Play from './playerButtons/Play';
 import Pause from './playerButtons/Pause';
 import helpers from '../helpers';
@@ -13,14 +12,15 @@ class App extends React.Component {
       isPlaying: false,
       playerSong: null,
     };
+    this.songRef = React.createRef();
   }
 
   componentDidMount() { helpers.mount.call(this); }
 
   render() {
-    // const { songs, isPlaying, playerSong, songFile } = this.state;
+    const { isPlaying, playerSong } = this.state;
     const songFile = new Audio('https://sound-clout.s3-us-west-1.amazonaws.com/01+Wakin+On+A+Pretty+Day.mp3');
-    // console.log(songFile);
+    console.log(songFile);
 
     return (
       <div>
@@ -35,7 +35,8 @@ class App extends React.Component {
     );
   }
 }
-
 export default App;
 
-//<PlayerSound playerSong={this.state.playerSong} isPlaying={this.state.isPlaying} />
+/*
+<audio preload="auto" src={playerSong.songfile} />
+*/

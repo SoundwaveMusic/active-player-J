@@ -1,5 +1,6 @@
 /* eslint-disable jsx-a11y/control-has-associated-label */
 import React from 'react';
+import PropTypes from 'prop-types';
 
 function Play({ playSong }) {
   return (
@@ -8,5 +9,9 @@ function Play({ playSong }) {
     </div>
   );
 }
+
+Play.propTypes = {
+  playSong: PropTypes.func.isRequired,
+};
 
 export default Play;
