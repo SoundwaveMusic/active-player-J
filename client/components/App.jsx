@@ -12,6 +12,7 @@ class App extends React.Component {
       playerSong: null,
       songFile: null,
     };
+    helpers.togglePlay = helpers.togglePlay.bind(this);
   }
 
   componentDidMount() { helpers.mount.call(this); }
@@ -26,9 +27,9 @@ class App extends React.Component {
         </header>
         <footer>
           {songFile && songFile.paused ? (
-            <Play playSong={helpers.togglePlay.bind(this, songFile)} />
+            <Play playSong={() => helpers.togglePlay(songFile)} />
           ) : (
-            <Pause pauseSong={helpers.togglePlay.bind(this, songFile)} />
+            <Pause pauseSong={() => helpers.togglePlay(songFile)} />
           )}
         </footer>
       </div>
