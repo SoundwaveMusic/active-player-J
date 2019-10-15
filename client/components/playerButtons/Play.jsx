@@ -1,10 +1,12 @@
 /* eslint-disable jsx-a11y/control-has-associated-label */
 import React from 'react';
 
-const Play = () => (
-  <div>
-    <button type="button" id="play" className="button" onClick={() => {alert('play clicked!');}} />
-  </div>
-);
+function Play({ playSong }) {
+  return (
+    <div>
+      <button type="button" id="play" className="button" onClick={playSong} />
+    </div>
+  );
+}
 
 export default Play;
