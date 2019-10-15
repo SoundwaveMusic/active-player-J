@@ -10,15 +10,14 @@ class App extends React.Component {
     this.state = {
       songs: [],
       playerSong: null,
-      songfile: null,
+      songFile: null,
     };
-    //helpers.togglePlay= helpers.togglePlay.bind(this);
   }
 
   componentDidMount() { helpers.mount.call(this); }
 
   render() {
-    const { playerSong, songfile } = this.state;
+    const { playerSong, songFile } = this.state;
 
     return (
       <div>
@@ -26,10 +25,10 @@ class App extends React.Component {
           <h1>Active Player</h1>
         </header>
         <footer>
-          {songfile && songfile.paused ? (
-            <Play playSong={helpers.togglePlay.bind(this, songfile)} />
+          {songFile && songFile.paused ? (
+            <Play playSong={helpers.togglePlay.bind(this, songFile)} />
           ) : (
-            <Pause pauseSong={helpers.togglePlay.bind(this, songfile)} />
+            <Pause pauseSong={helpers.togglePlay.bind(this, songFile)} />
           )}
         </footer>
       </div>
