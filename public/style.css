@@ -63,19 +63,27 @@ PLAYER BUTTONS
 }
 
 #play {
-    background-image: url("https://icon-library.net/images/play-icon-white-png/play-icon-white-png-28.jpg");
+    background-image: url("http://simpleicon.com/wp-content/uploads/play1.png");
+    background-size: 115%;
 }
 
+/* http://simpleicon.com/wp-content/uploads/play1.png */
+
 #pause {
-    background-image: url("https://iconsplace.com/wp-content/uploads/_icons/000000/256/png/pause-icon-256.png");
+    background-image: url("http://simpleicon.com/wp-content/uploads/pause.png");
+    background-size: 115%;
 }
+
+/* https://iconsplace.com/wp-content/uploads/_icons/000000/256/png/pause-icon-256.png */
 
 #back {
     background-image: url("https://www.shareicon.net/data/128x128/2016/11/14/851932_backward_512x512.png");
+    background-size: 70%;
 }
 
 #next {
     background-image: url("https://www.shareicon.net/data/128x128/2016/11/14/851930_forward_512x512.png");
+    background-size: 70%;
 }
 
 #shuffle {
