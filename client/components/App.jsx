@@ -1,4 +1,6 @@
 import React from 'react';
+import axios from 'axios';
+import PlayerSound from './PlayerSound';
 import Play from './playerButtons/Play';
 import Pause from './playerButtons/Pause';
 import helpers from '../helpers';
@@ -6,7 +8,7 @@ import helpers from '../helpers';
 class App extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { 
+    this.state = {
       songs: [],
       isPlaying: false,
       playerSong: null,
@@ -18,6 +20,7 @@ class App extends React.Component {
   render() {
     // const { songs, isPlaying, playerSong, songFile } = this.state;
     const songFile = new Audio('https://sound-clout.s3-us-west-1.amazonaws.com/01+Wakin+On+A+Pretty+Day.mp3');
+    // console.log(songFile);
 
     return (
       <div>
@@ -34,3 +37,5 @@ class App extends React.Component {
 }
 
 export default App;
+
+//<PlayerSound playerSong={this.state.playerSong} isPlaying={this.state.isPlaying} />
