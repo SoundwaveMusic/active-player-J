@@ -57,11 +57,18 @@ PLAYER BUTTONS
     margin-left: 13px;
     border: 0px;
     cursor: pointer;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 #play {
     background-image: url("https://icon-library.net/images/play-icon-white-png/play-icon-white-png-28.jpg");
-    background-repeat: no-repeat;
+    background-size: 85%;   
+}
+
+
+
+#pause {
+    background-image: url("https://iconsplace.com/wp-content/uploads/_icons/000000/256/png/pause-icon-256.png");
     background-size: 85%;
-    background-position: center;
 }
