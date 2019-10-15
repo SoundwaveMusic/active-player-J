@@ -9,18 +9,16 @@ class App extends React.Component {
     super(props);
     this.state = {
       songs: [],
-      isPlaying: false,
       playerSong: null,
+      songfile: null,
     };
-    this.songRef = React.createRef();
+    //helpers.togglePlay= helpers.togglePlay.bind(this);
   }
 
   componentDidMount() { helpers.mount.call(this); }
 
   render() {
-    const { isPlaying, playerSong } = this.state;
-    const songFile = new Audio('https://sound-clout.s3-us-west-1.amazonaws.com/01+Wakin+On+A+Pretty+Day.mp3');
-    console.log(songFile);
+    const { playerSong, songfile } = this.state;
 
     return (
       <div>
@@ -28,15 +26,14 @@ class App extends React.Component {
           <h1>Active Player</h1>
         </header>
         <footer>
-          <Play playSong={() => songFile.play()} />
-          <Pause pauseSong={() => songFile.pause()} />
+          {songfile && songfile.paused ? (
+            <Play playSong={helpers.togglePlay.bind(this, songfile)} />
+          ) : (
+            <Pause pauseSong={helpers.togglePlay.bind(this, songfile)} />
+          )}
         </footer>
       </div>
     );
   }
 }
 export default App;
-
-/*
-<audio preload="auto" src={playerSong.songfile} />
-*/
