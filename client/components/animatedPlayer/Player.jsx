@@ -9,7 +9,7 @@ function Player({ songFile, length }) {
     <div id="player">
       <CurrentTime elapsed={songFile.currentTime} />
       <Timeline />
-      <Remaining length={length} />
+      <Remaining length={length} elapsed={songFile.currentTime} />
     </div>
   );
 }
