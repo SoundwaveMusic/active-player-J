@@ -34,7 +34,7 @@ class App extends React.Component {
         <Button id="next" />
         <Button id="shuffle" />
         <Button id="repeat" />
-        {songFile && <Player songFile={songFile} />}
+        {songFile && <Player songFile={songFile} length={playerSong.length} />}
       </footer>
     );
   }

@@ -4,12 +4,12 @@ import CurrentTime from './CurrentTime';
 import Timeline from './Timeline';
 import Remaining from './LengthRemainingToggle';
 
-function Player({ songFile }) {
+function Player({ songFile, length }) {
   return (
     <div id="player">
       <CurrentTime elapsed={songFile.currentTime} />
       <Timeline />
-      <Remaining length={songFile.duration} />
+      <Remaining length={length} />
     </div>
   );
 }
@@ -19,6 +19,7 @@ Player.propTypes = {
     currentTime: PropTypes.number.isRequired,
     duration: PropTypes.number.isRequired,
   }),
+  length: PropTypes.number.isRequired,
 };
 
 Player.defaultProps = {
