@@ -127,14 +127,13 @@ ANIMATED PLAYER
 #currentTime {
     margin-top: 17.5px;
     float: right;
-    /* text-align: right; */
     color: #FF5500;
 }
 
 #remaining {
     margin-top: 17.5px;
     float: left;
-    /* text-align: right; */
+    cursor: pointer;
 }
 
 #timeline {
