@@ -47,9 +47,20 @@ table {
 	border-spacing: 0;
 }
 
-/****************************
+/********************************************************
+FOOTER STYLING
+********************************************************/
+footer {
+    height: 50px;
+    font-family: 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: #333333;
+    font-size: 12px;
+}
+/* 'Lucida Sans', 'Lucida Sans Regular',  */
+
+/********************************************************
 PLAYER BUTTONS
-****************************/
+********************************************************/
 
 .button {
     height: 50px;
@@ -92,4 +103,46 @@ PLAYER BUTTONS
 
 #repeat {
     background-image: url("https://cdn4.iconfinder.com/data/icons/ui-controls-editor/32/interface-controls-repeat-512.png");
+}
+
+/********************************************************
+ANIMATED PLAYER
+********************************************************/
+
+#player {
+    height: 50px;
+    width: 475px;
+    display: inline-block;
+    vertical-align: top;
+    margin-left: 20px;
+}
+
+.timeBox {
+    height: 50px;
+    width: 50px;
+    display: inline-block;
+    position: relative;
+}
+
+#currentTime {
+    margin-top: 17.5px;
+    float: right;
+    text-align: right;
+    color: #FF5500;
+}
+
+#timeline {
+    display: inline-block;
+    height: 50px;
+    width: 354px;
+    margin: 0 10px;
+    vertical-align: top;
+}
+
+.timeline {
+    display: inline-block;
+    height: 1px;
+    width: 354px;
+    background-color: #999999;
+    margin-top: 24.5px;
 }

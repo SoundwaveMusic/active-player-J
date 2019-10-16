@@ -1,9 +1,11 @@
 /* eslint-disable jsx-a11y/media-has-caption */
 import React from 'react';
-import Play from './playerButtons/Play';
-import Button from './playerButtons/Button';
-import Pause from './playerButtons/Pause';
 import helpers from '../helpers';
+import Play from './playerButtons/Play';
+import Pause from './playerButtons/Pause';
+import Button from './playerButtons/Button';
+import Player from './animatedPlayer/Player';
+
 
 class App extends React.Component {
   constructor(props) {
@@ -32,6 +34,7 @@ class App extends React.Component {
         <Button id="next" />
         <Button id="shuffle" />
         <Button id="repeat" />
+        {songFile && <Player songFile={songFile} />}
       </footer>
     );
   }

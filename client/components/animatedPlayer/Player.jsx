@@ -1,15 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import CurrentTime from './CurrentTime';
+import Timeline from './Timeline';
 
 function Player({ songFile }) {
   return (
     <div id="player">
-      {songFile.currentTime}
+      <CurrentTime elapsed={songFile.currentTime} />
+      <Timeline/>
     </div>
   );
 }
 
-// Received error:'songFile' is type object, but would need to use "shape" to pass the linter
 Player.propTypes = {
   songFile: PropTypes.shape({
     currentTime: PropTypes.number.isRequired,
