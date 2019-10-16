@@ -55,9 +55,9 @@ footer {
     font-family: 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     color: #333333;
     font-size: 12px;
-    /* position: fixed;
+    position: fixed;
     bottom: 0px;
-    margin: auto; */
+    margin: auto;
 }
 /* 'Lucida Sans', 'Lucida Sans Regular',  */
 
@@ -113,6 +113,7 @@ ANIMATED PLAYER
 ********************************************************/
 
 #player {
+    position: fixed;
     height: 50px;
     width: 475px;
     display: inline-block;
