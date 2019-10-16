@@ -25,16 +25,18 @@ class App extends React.Component {
 
     return (
       <footer>
-        <Button id="back" />
-        {songFile && songFile.paused ? (
-          <Play playSong={() => helpers.togglePlay(songFile)} />
-        ) : (
-          <Pause pauseSong={() => helpers.togglePlay(songFile)} />
-        )}
-        <Button id="next" />
-        <Button id="shuffle" />
-        <Button id="repeat" />
-        {songFile && <Player songFile={songFile} length={playerSong.length} />}
+        <div id="container">
+          <Button id="back" />
+          {songFile && songFile.paused ? (
+            <Play playSong={() => helpers.togglePlay(songFile)} />
+          ) : (
+            <Pause pauseSong={() => helpers.togglePlay(songFile)} />
+          )}
+          <Button id="next" />
+          <Button id="shuffle" />
+          <Button id="repeat" />
+          {songFile && <Player songFile={songFile} length={playerSong.length} />}
+        </div>
       </footer>
     );
   }
