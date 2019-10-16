@@ -1,11 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import getTime from './getTime';
 
 function CurrentTime({ elapsed }) {
-  const min = Math.floor(elapsed / 60);
-  const sec = Math.floor(elapsed % 60);
-  const zeroPaddedSec = (sec < 10) ? `0${sec}` : sec;
-  const time = `${min}:${zeroPaddedSec}`;
+  const time = getTime(elapsed);
 
   return (
     <div className="timeBox">

@@ -127,8 +127,14 @@ ANIMATED PLAYER
 #currentTime {
     margin-top: 17.5px;
     float: right;
-    text-align: right;
+    /* text-align: right; */
     color: #FF5500;
+}
+
+#remaining {
+    margin-top: 17.5px;
+    float: left;
+    /* text-align: right; */
 }
 
 #timeline {
@@ -144,5 +150,5 @@ ANIMATED PLAYER
     height: 1px;
     width: 354px;
     background-color: #999999;
-    margin-top: 24.5px;
+    margin-top: 24px;
 }
