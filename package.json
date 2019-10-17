@@ -4,7 +4,7 @@
   "description": "This features an animated music player at the bottom of the client app.",
   "main": "index.js",
   "scripts": {
-    "test": "jest",
+    "test": "jest --coverage",
     "db": "mysql -u root -p < ./database/data/schema.sql",
     "build": "webpack -w",
     "start": "nodemon ./server/index.js localhost 3020",
@@ -25,6 +25,7 @@
     "@babel/core": "^7.6.4",
     "@babel/preset-env": "^7.6.3",
     "@babel/preset-react": "^7.6.3",
+    "babel-jest": "^24.9.0",
     "babel-loader": "^8.0.6",
     "enzyme": "^3.10.0",
     "enzyme-adapter-react-16.1": "^1.6.2",
@@ -34,7 +35,11 @@
     "eslint-plugin-jsx-a11y": "^6.2.3",
     "eslint-plugin-react": "^7.16.0",
     "eslint-plugin-react-hooks": "^1.7.0",
+    "identity-obj-proxy": "^3.0.0",
     "jest": "^24.9.0",
+    "prop-types": "^15.7.2",
+    "react": "^16.10.2",
+    "react-dom": "^16.10.2",
     "webpack": "^4.41.0",
     "webpack-cli": "^3.3.9"
   },
@@ -46,12 +51,6 @@
     "faker": "^4.1.0",
     "mysql": "^2.17.1",
     "nodemon": "^1.19.3",
-    "path": "^0.12.7",
-    "prop-types": "^15.7.2",
-    "react": "^16.10.2",
-    "react-audio-player": "^0.11.1",
-    "react-dom": "^16.10.2",
-    "react-sound": "^1.2.0",
-    "soundmanager2": "^2.97.20170602"
+    "path": "^0.12.7"
   }
 }
