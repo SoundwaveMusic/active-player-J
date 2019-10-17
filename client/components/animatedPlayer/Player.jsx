@@ -4,26 +4,20 @@ import CurrentTime from './CurrentTime';
 import Timeline from './Timeline';
 import Remaining from './LengthRemainingToggle';
 
-function Player({ songFile, length }) {
+function Player({ length, timestamp }) {
+  console.log(timestamp);
   return (
     <div>
-      <CurrentTime elapsed={songFile.currentTime} />
+      <CurrentTime elapsed={timestamp} />
       <Timeline />
-      <Remaining length={length} elapsed={songFile.currentTime} />
+      <Remaining length={length} elapsed={timestamp} />
     </div>
   );
 }
 
 Player.propTypes = {
-  songFile: PropTypes.shape({
-    currentTime: PropTypes.number.isRequired,
-    duration: PropTypes.number.isRequired,
-  }),
   length: PropTypes.number.isRequired,
-};
-
-Player.defaultProps = {
-  songFile: { currentTime: 0, duration: 0 },
+  timestamp: PropTypes.number.isRequired,
 };
 
 export default Player;

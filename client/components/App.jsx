@@ -17,30 +17,30 @@ class App extends React.Component {
       songFile: null,
       timestamp: 0,
     };
-    helpers.togglePlay = helpers.togglePlay.bind(this);
-    helpers.tick = helpers.tick.bind(this);
+    this.togglePlay = helpers.togglePlay.bind(this);
+    this.tick = helpers.tick.bind(this);
   }
 
   componentDidMount() { helpers.mount.call(this); }
 
   render() {
-    const { playerSong, songFile } = this.state;
+    const { playerSong, songFile, timestamp } = this.state;
 
     return (
       <footer>
         <div id="container">
           <Button id="back" />
           {songFile && songFile.paused ? (
-            <Play playSong={() => helpers.togglePlay(songFile)} />
+            <Play playSong={() => this.togglePlay(songFile)} />
           ) : (
-            <Pause pauseSong={() => helpers.togglePlay(songFile)} />
+            <Pause pauseSong={() => this.togglePlay(songFile)} />
           )}
           <Button id="next" />
           <Button id="shuffle" />
           <Button id="repeat" />
           <div className="player">
             {songFile
-              && <Player songFile={songFile} length={playerSong.length} />}
+              && <Player length={playerSong.length} timestamp={timestamp} />}
           </div>
           <Volume />
         </div>

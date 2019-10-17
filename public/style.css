@@ -56,8 +56,8 @@ footer {
     font-family: 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     color: #333333;
     font-size: 12px;
-    position: sticky;
-    position: -webkit-sticky;
+    position: fixed;
+    /* position: -webkit-sticky; */
     bottom: 0;
     width: 100%;
     background-color: #f2f2f2;
