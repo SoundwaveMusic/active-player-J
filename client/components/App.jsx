@@ -6,6 +6,7 @@ import Pause from './playerButtons/Pause';
 import Button from './playerButtons/Button';
 import Volume from './playerButtons/Volume';
 import Player from './animatedPlayer/Player';
+import InfoBar from './SongInfo/InfoBar';
 
 
 class App extends React.Component {
@@ -38,11 +39,12 @@ class App extends React.Component {
           <Button id="next" />
           <Button id="shuffle" />
           <Button id="repeat" />
-          <div className="player">
+          <div id="player">
             {songFile
               && <Player length={playerSong.length} timestamp={timestamp} />}
           </div>
           <Volume />
+          <InfoBar />
         </div>
       </footer>
     );

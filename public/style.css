@@ -76,8 +76,8 @@ PLAYER BUTTONS
 
 .button {
     height: 50px;
-    width: 27px;
-    margin-left: 13px;
+    width: 24px;
+    margin-left: 12px;
     border: 0px;
     cursor: pointer;
     background-repeat: no-repeat;
@@ -119,6 +119,7 @@ PLAYER BUTTONS
 }
 
 #volume {
+    width: 26px;
     background-image: url("https://cdn4.iconfinder.com/data/icons/glyph-ui-icons-part-1/22/dinamic_middle-512.png");
 }
 
@@ -126,12 +127,12 @@ PLAYER BUTTONS
 ANIMATED PLAYER
 ********************************************************/
 
-.player {
+#player {
     height: 50px;
-    width: 635px;
+    width: 634px;
     display: inline-block;
     vertical-align: top;
-    margin-left: 20px;
+    margin-left: 19px;
     background-color: #f2f2f2;
 
 }
@@ -158,15 +159,35 @@ ANIMATED PLAYER
 #timeline {
     display: inline-block;
     height: 50px;
-    width: 515px;
-    margin: 0 10px;
+    width: 514px;
+    margin: 0 9px;
     vertical-align: top;
 }
 
 .timeline {
     display: inline-block;
     height: 1px;
-    width: 515px;
+    width: 514px;
     background-color: #999999;
     margin-top: 24px;
 }
+
+/********************************************************
+INFO BAR
+********************************************************/
+
+#infoBar {
+    height: 50px;
+    width: 360px;
+    display: inline-block;
+    vertical-align: top;
+    margin-left: 8px;
+    background-color: #f2f2f2;
+}
+
+#infoContainer {
+    width: 346px;
+    margin: auto;
+    background-color: #f2f2f2;
+}
+
