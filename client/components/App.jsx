@@ -44,7 +44,10 @@ class App extends React.Component {
               && <Player length={playerSong.length} timestamp={timestamp} />}
           </div>
           <Volume />
-          <InfoBar />
+          <div id="infoBar">
+            {playerSong
+              && <InfoBar playerSong={playerSong} />}
+          </div>
         </div>
       </footer>
     );
