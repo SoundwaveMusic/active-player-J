@@ -129,10 +129,10 @@ ANIMATED PLAYER
 
 #player {
     height: 50px;
-    width: 634px;
+    width: 633px;
     display: inline-block;
     vertical-align: top;
-    margin-left: 19px;
+    margin-left: 20px;
     background-color: #f2f2f2;
 
 }
