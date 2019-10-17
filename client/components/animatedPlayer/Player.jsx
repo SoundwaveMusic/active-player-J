@@ -5,7 +5,6 @@ import Timeline from './Timeline';
 import Remaining from './LengthRemainingToggle';
 
 function Player({ length, timestamp }) {
-  console.log(timestamp);
   return (
     <div>
       <CurrentTime elapsed={timestamp} />
