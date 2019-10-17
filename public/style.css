@@ -255,6 +255,18 @@ INFO BAR
     grid-column: 1;
     grid-row: 1;
     cursor: pointer;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 50%;
+    background-color: #f2f2f2;
+}
+
+#liked {
+    background-image: url('./assets/pinkheart.svg')
+}
+
+#like {
+    background-image: url('./assets/blackheart.svg');
 }
 
 .nextUpButton {
