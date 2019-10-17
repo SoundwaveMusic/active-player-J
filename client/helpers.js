@@ -8,6 +8,7 @@ const helpers = {
         songs: results.data,
         playerSong: results.data[0],
         songFile: new Audio(results.data[0].songfile),
+        timestamp: 0,
       }))
       .then(() => console.log('state', this.state))
       .catch((err) => console.log('err: ', err));
@@ -15,13 +16,19 @@ const helpers = {
   togglePlay(songFile) {
     if (songFile.paused) {
       songFile.play();
-      console.log('songFile is playing: ', !songFile.paused);
-      this.setState({});
+      console.log(this);
+      this.timestampID = setInterval(() => helpers.tick(songFile), 1000);
+      console.log(this.timestampID);
     } else {
       songFile.pause();
       console.log('songFile is now paused: ', songFile.paused, 'at ', songFile.currentTime);
-      this.setState({});
+      this.setState({ timestamp: songFile.currentTime });
+      clearInterval(this.timestampID);
     }
+  },
+  tick(songFile) {
+    this.setState({ timestamp: songFile.currentTime });
+    console.log(this.state);
   },
 };
 

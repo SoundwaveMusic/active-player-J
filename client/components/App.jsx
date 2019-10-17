@@ -15,8 +15,10 @@ class App extends React.Component {
       songs: [],
       playerSong: null,
       songFile: null,
+      timestamp: 0,
     };
     helpers.togglePlay = helpers.togglePlay.bind(this);
+    helpers.tick = helpers.tick.bind(this);
   }
 
   componentDidMount() { helpers.mount.call(this); }
