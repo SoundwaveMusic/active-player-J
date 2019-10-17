@@ -1,11 +1,16 @@
-/* eslint-disable jsx-a11y/control-has-associated-label */
 import React from 'react';
 import PropTypes from 'prop-types';
 
 function Play({ playSong }) {
   return (
     <span>
-      <button type="button" id="play" className="button" onClick={playSong} />
+      <button
+        type="button"
+        id="play"
+        className="button"
+        onClick={playSong}
+        aria-label="play"
+      />
     </span>
   );
 }

@@ -28,6 +28,7 @@ class Remaining extends React.Component {
           onKeyDown={this.handleClick}
           role="button"
           tabIndex="-1"
+          aria-label="length"
         >
           {isLengthRemaining ? (remaining) : (total)}
         </span>
