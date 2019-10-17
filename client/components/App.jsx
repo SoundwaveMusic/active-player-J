@@ -4,6 +4,7 @@ import helpers from '../helpers';
 import Play from './playerButtons/Play';
 import Pause from './playerButtons/Pause';
 import Button from './playerButtons/Button';
+import Volume from './playerButtons/Volume';
 import Player from './animatedPlayer/Player';
 
 
@@ -35,7 +36,11 @@ class App extends React.Component {
           <Button id="next" />
           <Button id="shuffle" />
           <Button id="repeat" />
-          {songFile && <Player songFile={songFile} length={playerSong.length} />}
+          <div className="player">
+            {songFile
+              && <Player songFile={songFile} length={playerSong.length} />}
+          </div>
+          <Volume />
         </div>
       </footer>
     );

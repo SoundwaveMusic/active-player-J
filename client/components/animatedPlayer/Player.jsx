@@ -6,7 +6,7 @@ import Remaining from './LengthRemainingToggle';
 
 function Player({ songFile, length }) {
   return (
-    <div id="player">
+    <div>
       <CurrentTime elapsed={songFile.currentTime} />
       <Timeline />
       <Remaining length={length} elapsed={songFile.currentTime} />

@@ -29,7 +29,8 @@ footer, header, hgroup, menu, nav, section {
 	display: block;
 }
 body {
-	line-height: 1;
+    line-height: 1;
+    height: 100%;
 }
 ol, ul {
 	list-style: none;
@@ -55,10 +56,10 @@ footer {
     font-family: 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     color: #333333;
     font-size: 12px;
-    position: fixed;
-    bottom: 0px;
+    position: sticky;
+    position: -webkit-sticky;
+    bottom: 0;
     width: 100%;
-    /* margin: auto; */
     background-color: #f2f2f2;
     border-top: .5px solid #cecece;
 }
@@ -68,7 +69,6 @@ footer {
     background-color: #f2f2f2;
     border-top: .5px solid #cecece;
 }
-/* 'Lucida Sans', 'Lucida Sans Regular',  */
 
 /********************************************************
 PLAYER BUTTONS
@@ -118,24 +118,29 @@ PLAYER BUTTONS
     background-image: url("https://cdn4.iconfinder.com/data/icons/ui-controls-editor/32/interface-controls-repeat-512.png");
 }
 
+#volume {
+    background-image: url("https://cdn4.iconfinder.com/data/icons/glyph-ui-icons-part-1/22/dinamic_middle-512.png");
+}
+
 /********************************************************
 ANIMATED PLAYER
 ********************************************************/
 
-#player {
-    position: fixed;
+.player {
     height: 50px;
     width: 635px;
     display: inline-block;
     vertical-align: top;
     margin-left: 20px;
+    background-color: #f2f2f2;
+
 }
 
 .timeBox {
     height: 50px;
     width: 50px;
     display: inline-block;
-    position: relative;
+    /* position: relative; */
 }
 
 #currentTime {
