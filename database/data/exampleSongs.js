@@ -1,3 +1,5 @@
+const faker = require('faker');
+
 module.exports = [
   {
     songId: 141,
