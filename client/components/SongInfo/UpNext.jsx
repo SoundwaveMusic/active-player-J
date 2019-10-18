@@ -1,5 +1,5 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 
 class UpNext extends React.Component {
   constructor(props) {
@@ -26,7 +26,6 @@ class UpNext extends React.Component {
       />
     );
   }
-
 }
 
 // UpNext.propTypes = {
