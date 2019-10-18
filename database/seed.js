@@ -10,7 +10,7 @@ const seedData = () => {
       length: Math.floor(Math.random() * (500 - 100) + 100),
       timestamp: 0,
       isliked: Math.floor(Math.random() * 2),
-      songfile: faker.internet.url(),
+      songFile: faker.internet.url(),
       title: faker.random.words(),
       artist: faker.name.findName(),
       album: faker.commerce.productName(),
