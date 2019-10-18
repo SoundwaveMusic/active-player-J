@@ -129,7 +129,9 @@ PLAYER BUTTONS
 .timeline,
 .albumArt,
 #artist:focus,
-#title:focus {
+#title:focus,
+.like,
+.nextUp {
     outline: none;
 }
 

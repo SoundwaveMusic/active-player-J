@@ -26,7 +26,7 @@ class App extends React.Component {
   componentDidMount() { helpers.mount.call(this); }
 
   render() {
-    const { playerSong, songFile, timestamp } = this.state;
+    const { songs, playerSong, songFile, timestamp } = this.state;
 
     return (
       <footer>
@@ -47,7 +47,7 @@ class App extends React.Component {
           <Volume />
           <div id="infoBar">
             {playerSong
-              && <InfoBar playerSong={playerSong} like={this.like} />}
+              && <InfoBar playerSong={songs[0]} like={this.like} />}
           </div>
         </div>
       </footer>
