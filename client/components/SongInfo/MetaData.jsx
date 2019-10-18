@@ -1,13 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Like from './Like';
+import UpNext from './UpNext';
 
 function MetaData({ songId, isLiked, like }) {
 
   return (
     <div id="metaDataGrid">
       <Like songId={songId} isLiked={isLiked} like={like} />
-      <div className="nextUp metaButton" />
+      <UpNext />
     </div>
   );
 }
