@@ -1,24 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import Like from './Like';
 
 function MetaData({ songId, isLiked, like }) {
-  let currentLike = isLiked;
-  const click = () => {
-    like(songId, isLiked);
-    currentLike = isLiked ? 0 : 1;
-  };
 
   return (
     <div id="metaDataGrid">
-      <div
-        className="like metaButton"
-        id={currentLike ? 'liked' : 'like'}
-        onClick={click}
-        onKeyDown={click}
-        role="button"
-        tabIndex="-1"
-        aria-label="like"
-      />
+      <Like songId={songId} isLiked={isLiked} like={like} />
       <div className="nextUp metaButton" />
     </div>
   );
