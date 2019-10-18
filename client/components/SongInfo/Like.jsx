@@ -2,16 +2,14 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 function Like({ songId, isLiked, like }) {
-  let currentLike = isLiked;
   const click = () => {
     like(songId, isLiked);
-    currentLike = isLiked ? 0 : 1;
   };
 
   return (
     <div
       className="like metaButton"
-      id={currentLike ? 'liked' : 'like'}
+      id={isLiked ? 'liked' : 'like'}
       onClick={click}
       onKeyDown={click}
       role="button"
