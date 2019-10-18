@@ -14,7 +14,7 @@ app.get('/play/:songid', cb.getPlay);
 
 app.get('/:playlist', cb.getPlaylist);
 
-app.post('/timestamp/:songid', jsonParser, cb.timestampEntry);
+app.post('/like/:songid', jsonParser, cb.likeEntry);
 
 app.post('/playlist/:playlist', jsonParser, cb.playlistEntry);
 

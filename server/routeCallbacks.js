@@ -11,8 +11,9 @@ module.exports = {
       .then((results) => res.status(200).send(results))
       .catch((err) => res.status(404).send(err));
   },
-  timestampEntry: (req, res) => {
-    schema.timestampUpdaterAsync(req.params.songid, req.body.timestamp)
+  likeEntry: (req, res) => {
+    console.log(req.body.isliked)
+    schema.likeUpdaterAsync(req.params.songid, req.body.isliked)
       .then((results) => res.status(200).send(results))
       .catch((err) => res.status(404).send(err));
   },

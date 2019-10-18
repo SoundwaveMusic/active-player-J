@@ -43,9 +43,11 @@ module.exports = Promise.promisifyAll({
       .then((results) => cb(null, results))
       .catch((err) => cb(err));
   },
-  timestampUpdater: (songid, timestamp, cb) => {
-    const stmt = `UPDATE songs SET timestamp = ${timestamp}
-                  WHERE id = ${songid}
+  likeUpdater: (songid, like, cb) => {
+    const newStatus = like ? 0 : 1;
+    console.log(songid, 'new status: ', newStatus);
+    const stmt = `UPDATE songs SET isliked = ${newStatus}
+                  WHERE songid = ${songid}
                   `;
     db.queryAsync(stmt)
       .then((results) => cb(null, results))
