@@ -31,6 +31,9 @@ const helpers = {
     // 2) Set state: upNext, previousPlays, *new* songFile, timestamp 0
   },
   togglePlay(songFile) {
+    // If paused, play and vice versa
+    // When playing, initialize per second call to tick
+    // When pausing, clear the interval to stop per second calls
     if (songFile.paused) {
       songFile.play();
       this.timestampID = setInterval(() => this.tick(songFile), 1000);
@@ -41,9 +44,18 @@ const helpers = {
     }
   },
   tick(songFile) {
+    // Tick is called each second when playing,
+    //   storing the currentTime property from the Audio element
     this.setState({ timestamp: songFile.currentTime });
   },
   like(songId, isLiked) {
+    //  Post to the "/like:songId" route to toggle like status
+    //  Get all songs, and set the state for songs
+    //  Get nextUp songIds, use Promise.each to:
+    //    use '/songs/:id' to get the song obj
+    //    then push result to upNext arr
+    //    When all promises complete: setState with upNext
+    //  Do the same for previousPlays^
     axios.post(`/like/${songId}`, { isliked: isLiked })
       .then(() => axios.get('./songs'))
       .then((results) => this.setState({ songs: results.data }))
