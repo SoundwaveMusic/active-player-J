@@ -20,6 +20,7 @@ class App extends React.Component {
     };
     this.togglePlay = helpers.togglePlay.bind(this);
     this.tick = helpers.tick.bind(this);
+    this.like = helpers.like.bind(this);
   }
 
   componentDidMount() { helpers.mount.call(this); }
@@ -46,7 +47,7 @@ class App extends React.Component {
           <Volume />
           <div id="infoBar">
             {playerSong
-              && <InfoBar playerSong={playerSong} />}
+              && <InfoBar playerSong={playerSong} like={this.like} />}
           </div>
         </div>
       </footer>

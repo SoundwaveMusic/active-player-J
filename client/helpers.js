@@ -10,7 +10,7 @@ const helpers = {
         timestamp: 0,
       }))
       .then(() => console.log('state', this.state))
-      .catch((err) => console.log('err: ', err));
+      .catch((err) => console.log('mount err: ', err));
   },
   togglePlay(songFile) {
     if (songFile.paused) {
@@ -24,6 +24,13 @@ const helpers = {
   },
   tick(songFile) {
     this.setState({ timestamp: songFile.currentTime });
+  },
+  like(songid, isLiked) {
+    axios.post(`/like/${songid}`, { isliked: isLiked })
+      .then(() => axios.get('./songs'))
+      .then((results) => this.setState({ songs: results.data }))
+      .then(() => console.log('state after like ', this.state))
+      .catch((err) => console.log('like err', err));
   },
 };
 

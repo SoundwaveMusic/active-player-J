@@ -54,6 +54,7 @@ InfoBar.propTypes = {
     artist: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
     isliked: PropTypes.number.isRequired,
+    songId: PropTypes.number.isRequired,
   }).isRequired,
   like: PropTypes.func.isRequired,
 };
