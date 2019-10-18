@@ -9,8 +9,8 @@ function MetaData({ isLiked }) {
 
   return (
     <div id="metaDataGrid">
-      <div className="like" id={isLiked ? 'liked' : 'like'} />
-      <div className="nextUpButton" />
+      <div className="like metaButton" id={isLiked ? 'liked' : 'like'} />
+      <div className="nextUp metaButton" />
     </div>
   );
 }

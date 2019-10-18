@@ -254,6 +254,9 @@ INFO BAR
 .like {
     grid-column: 1;
     grid-row: 1;
+}
+
+.metaButton{
     cursor: pointer;
     background-repeat: no-repeat;
     background-position: center;
@@ -262,15 +265,16 @@ INFO BAR
 }
 
 #liked {
-    background-image: url('./assets/pinkheart.svg')
+    background-image: url('./assets/pinkheart.svg');
 }
 
 #like {
     background-image: url('./assets/blackheart.svg');
 }
 
-.nextUpButton {
+.nextUp {
     grid-column: 2;
     grid-row: 1;
-    cursor: pointer
+    background-image: url('./assets/nextUpt-alt.png');
+    background-size: 90%;
 }
