@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import MetaData from './MetaData';
 
 
-function InfoBar({ playerSong }) {
+function InfoBar({ playerSong, like }) {
   const click = (type, value) => {
     alert(`Redirecting to the ${type} page for ${value}`);
   };
@@ -42,7 +42,7 @@ function InfoBar({ playerSong }) {
           {playerSong.title}
         </div>
       </div>
-      <MetaData isLiked={playerSong.isliked} />
+      <MetaData songId={playerSong.songId} isLiked={playerSong.isliked} like={like} />
     </div>
   );
 }
@@ -55,6 +55,7 @@ InfoBar.propTypes = {
     title: PropTypes.string.isRequired,
     isliked: PropTypes.number.isRequired,
   }).isRequired,
+  like: PropTypes.func.isRequired,
 };
 
 export default InfoBar;

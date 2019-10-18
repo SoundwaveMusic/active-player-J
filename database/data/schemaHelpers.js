@@ -45,7 +45,6 @@ module.exports = Promise.promisifyAll({
   },
   likeUpdater: (songid, like, cb) => {
     const newStatus = like ? 0 : 1;
-    console.log(songid, 'new status: ', newStatus);
     const stmt = `UPDATE songs SET isliked = ${newStatus}
                   WHERE songid = ${songid}
                   `;
