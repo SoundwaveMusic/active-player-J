@@ -14,7 +14,8 @@ class App extends React.Component {
     super(props);
     this.state = {
       songs: [],
-      playerSong: null,
+      upNext: [],
+      previousPlays: [],
       songFile: null,
       timestamp: 0,
     };
@@ -26,7 +27,7 @@ class App extends React.Component {
   componentDidMount() { helpers.mount.call(this); }
 
   render() {
-    const { songs, playerSong, songFile, timestamp } = this.state;
+    const { songs, upNext, songFile, timestamp } = this.state;
 
     return (
       <footer>
@@ -42,12 +43,12 @@ class App extends React.Component {
           <Button id="repeat" />
           <div id="player">
             {songFile
-              && <Player length={playerSong.length} timestamp={timestamp} />}
+              && <Player length={upNext[0].length} timestamp={timestamp} />}
           </div>
           <Volume />
           <div id="infoBar">
-            {playerSong
-              && <InfoBar playerSong={songs[0]} like={this.like} />}
+            {upNext[0]
+              && <InfoBar playerSong={upNext[0]} like={this.like} />}
           </div>
         </div>
       </footer>

@@ -3,17 +3,21 @@ import axios from 'axios';
 const helpers = {
   // Current Player song will always be the first song in the next up playlist
   mount() {
-    // 1) Get all the songs as the default playlist
-    // 2) Splice out first song and push to upNext playlist
-    // 3) When setting state, make a songFile out of upNext[0]
-    // 4) Set state: songs, upNext, songFile
     axios.get('/songs')
-      .then((results) => this.setState({
-        songs: results.data,
-        playerSong: results.data[0],
-        songFile: new Audio(results.data[0].songFile),
-        timestamp: 0,
-      }))
+      .then((results) => {
+        // 1) Get all the songs as the default playlist
+        const songs = results.data;
+        // 2) Splice out first song and push to upNext playlist
+        const upNext = [];
+        upNext.push(songs.shift());
+        // 3) When setting state, make a songFile out of upNext[0]
+        // 4) Set state: songs, upNext, songFile
+        return this.setState({
+          songs,
+          upNext,
+          songFile: new Audio(upNext[0].songFile),
+        });
+      })
       .then(() => console.log('state', this.state))
       .catch((err) => console.log('mount err: ', err));
   },
