@@ -1,8 +1,8 @@
 const schema = require('../database/data/schemaHelpers');
 
 module.exports = {
-  getPlay: (req, res) => {
-    schema.songGetterAsync(req.params.songId)
+  getSong: (req, res) => {
+    schema.songGetterAsync(req.params.id)
       .then((results) => res.status(200).send(results))
       .catch((err) => res.status(404).send(err));
   },

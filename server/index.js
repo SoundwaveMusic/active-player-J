@@ -10,7 +10,7 @@ const jsonParser = bodyParser.json()
 
 app.use(express.static(path.join(__dirname, '../public')));
 
-app.get('/play/:songId', cb.getPlay);
+app.get('/songs/:id', cb.getSong);
 
 app.get('/:playlist', cb.getPlaylist);
 
