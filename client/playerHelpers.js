@@ -1,26 +1,7 @@
 import axios from 'axios';
 
-const helpers = {
+const playerHelpers = {
   // Current Player song will always be the first song in the next up playlist
-  mount() {
-    axios.get('/songs')
-      .then((results) => {
-        // 1) Get all the songs as the default playlist
-        const songs = results.data;
-        // 2) Splice out first song and push to upNext playlist
-        const upNext = [];
-        upNext.push(songs.shift());
-        // 3) When setting state, make a songFile out of upNext[0]
-        // 4) Set state: songs, upNext, songFile
-        return this.setState({
-          songs,
-          upNext,
-          songFile: new Audio(upNext[0].songFile),
-        });
-      })
-      .then(() => console.log('state', this.state))
-      .catch((err) => console.log('mount err: ', err));
-  },
   next() {
     const { songFile, upNext, previousPlays, songs } = this.state;
     // stop current song with timestampId
@@ -76,20 +57,6 @@ const helpers = {
     //   storing the currentTime property from the Audio element
     this.setState({ timestamp: songFile.currentTime });
   },
-  like(songId, isLiked) {
-    //  Post to the "/like:songId" route to toggle like status
-    //  Get all songs, and set the state for songs
-    //  Get nextUp songIds, use Promise.each to:
-    //    use '/songs/:id' to get the song obj
-    //    then push result to upNext arr
-    //    When all promises complete: setState with upNext
-    //  Do the same for previousPlays^
-    axios.post(`/like/${songId}`, { isliked: isLiked })
-      .then(() => axios.get('./songs'))
-      .then((results) => this.setState({ songs: results.data }))
-      .then(() => console.log('state after like ', this.state))
-      .catch((err) => console.log('like err', err));
-  },
 };
 
-export default helpers;
+export default playerHelpers;

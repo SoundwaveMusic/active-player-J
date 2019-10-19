@@ -33,7 +33,7 @@ const metaHelpers = {
           const likeStatus = upNext[0].isliked;
           upNext[0].isliked = likeStatus ? 0 : 1;
         }
-        return this.setState({ upNext, songs: results.data })
+        return this.setState({ upNext, songs: results.data });
       })
       .then(() => console.log('state after like ', this.state))
       .catch((err) => console.log('like err', err));
