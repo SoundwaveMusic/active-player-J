@@ -201,10 +201,8 @@ ANIMATED PLAYER--ANIMATED TIMELINE
     vertical-align: top;
     height: 1.5px;
     background-color: #ea5138;
-    transition: margin-left 1s linear;
+    transition: width 1s linear;
 }
-/* ea5138 */
-/* eb5b39 */
 
 /********************************************************
 INFO BAR--CONTAINER
