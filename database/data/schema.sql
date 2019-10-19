@@ -18,7 +18,7 @@ CREATE TABLE songs (
   PRIMARY KEY (id)
 );
 
-CREATE TABLE upnext (
+CREATE TABLE upNext (
   position INT AUTO_INCREMENT,
   songId INT,
   FOREIGN KEY (songId) 
@@ -27,7 +27,7 @@ CREATE TABLE upnext (
   UNIQUE KEY (position)
 );
 
-CREATE TABLE previousplays (
+CREATE TABLE previousPlays (
   position INT AUTO_INCREMENT,
   songId INT,
   FOREIGN KEY (songId) 

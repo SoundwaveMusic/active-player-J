@@ -22,9 +22,21 @@ const helpers = {
       .catch((err) => console.log('mount err: ', err));
   },
   next() {
+    const { upNext, previousPlays, songs } = this.state;
     // 1) Splice first song in upNext and push to previousPlays
+    previousPlays.push(upNext.shift());
     // 2) if upNext is empty, splice first song in songs and push to upNext
+    if (upNext.length === 0) {
+      upNext.push(songs.shift());
+    }
     // 3) Set state: songs, upNext, previousPlays, *new* songFile, timestamp 0
+    this.setState({
+      upNext,
+      previousPlays,
+      songs,
+      timestamp: 0,
+      songFile: new Audio(upNext[0].songFile),
+    });
   },
   back() {
     // 1) If previousPlays is not empty pop last song and push into upNext

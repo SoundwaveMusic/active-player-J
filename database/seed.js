@@ -18,7 +18,7 @@ const seedData = () => {
     };
     const sampleSong = exampleSongs[i] || randomSong;
     schema.songSaverAsync(sampleSong)
-      // .then((results) => schema.playlistSaverAsync(results.insertId, 'upnext'))
+      // .then((results) => schema.playlistSaverAsync(results.insertId, 'upNext'))
       .then((results) => console.log('upNextGeneratorAsync result', results))
       .catch((err) => console.log('upNextGeneratorAsync err', err));
   }

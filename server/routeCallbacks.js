@@ -17,7 +17,7 @@ module.exports = {
       .catch((err) => res.status(404).send(err));
   },
   playlistEntry: (req, res) => {
-    schema.playlistSaverAsync(req.body.songId, req.params.playlist)
+    schema.playlistSaverAsync(req.body.id, req.params.playlist)
       .then((results) => res.status(201).send(results))
       .catch((err) => res.status(400).send(err));
   },
