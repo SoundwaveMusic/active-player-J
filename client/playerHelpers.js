@@ -57,6 +57,12 @@ const playerHelpers = {
     //   storing the currentTime property from the Audio element
     this.setState({ timestamp: songFile.currentTime });
   },
+  scrub(newTimestamp) {
+    // Change the value of currentTime to the new timestamp
+    // setState for the timestamp property
+    this.state.songFile.currentTime = newTimestamp;
+    this.setState({ timestamp: newTimestamp });
+  },
 };
 
 export default playerHelpers;

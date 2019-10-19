@@ -186,6 +186,7 @@ ANIMATED PLAYER--ANIMATED TIMELINE
     width: 514px;
     margin: 0 9px;
     vertical-align: top;
+    cursor: pointer;
 }
 
 #timeline {
@@ -201,7 +202,11 @@ ANIMATED PLAYER--ANIMATED TIMELINE
     vertical-align: top;
     height: 1.5px;
     background-color: #ea5138;
-    transition: width 1s linear;
+    transition: width linear;
+}
+
+.animatedTimeline:hover {
+    background-color: transparent;
 }
 
 /********************************************************

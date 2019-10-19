@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-function Timeline({ length, elapsed }) {
+function Timeline({ length, elapsed, scrub }) {
   const width = `${(elapsed / length) * 100}%`;
   const animatedStyles = { width };
 
@@ -14,10 +14,10 @@ function Timeline({ length, elapsed }) {
     const leftTlineBound = e.target.getBoundingClientRect().left;
     const rightTlineBound = e.target.getBoundingClientRect().right;
     const clickLocation = e.clientX;
-    let newTimestamp = ((clickLocation - leftTlineBound) / (rightTlineBound - leftTlineBound))
+    let newTimestamp = ((clickLocation - leftTlineBound) / (rightTlineBound - leftTlineBound));
     newTimestamp *= length;
     console.log('new timestamp: ', newTimestamp);
-    return newTimestamp;
+    scrub(newTimestamp);
   }
   return (
     <div id="timelineContainer" onClick={getNewTimestamp} >
@@ -31,6 +31,7 @@ function Timeline({ length, elapsed }) {
 Timeline.propTypes = {
   length: PropTypes.number.isRequired,
   elapsed: PropTypes.number.isRequired,
+  scrub: PropTypes.func.isRequired,
 };
 
 export default Timeline;

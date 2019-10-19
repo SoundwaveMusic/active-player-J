@@ -25,6 +25,7 @@ class App extends React.Component {
     this.like = metaHelpers.like.bind(this);
     this.next = playerHelpers.next.bind(this);
     this.back = playerHelpers.back.bind(this);
+    this.scrub = playerHelpers.scrub.bind(this);
   }
 
   componentDidMount() { metaHelpers.mount.call(this); }
@@ -46,7 +47,7 @@ class App extends React.Component {
           <Button id="repeat" clickHandler={() => alert('Clicked repeat!')} />
           <div id="player">
             {songFile
-              && <Player length={upNext[0].length} timestamp={timestamp} />}
+              && <Player length={upNext[0].length} timestamp={timestamp} scrub={this.scrub} />}
           </div>
           <Volume />
           <div id="infoBar">
