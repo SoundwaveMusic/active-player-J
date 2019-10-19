@@ -1,5 +1,6 @@
 /* eslint-disable jsx-a11y/media-has-caption */
 import React from 'react';
+import metaHelpers from '../metaHelpers';
 import helpers from '../helpers';
 import Play from './playerButtons/Play';
 import Pause from './playerButtons/Pause';
@@ -21,12 +22,12 @@ class App extends React.Component {
     };
     this.togglePlay = helpers.togglePlay.bind(this);
     this.tick = helpers.tick.bind(this);
-    this.like = helpers.like.bind(this);
+    this.like = metaHelpers.like.bind(this);
     this.next = helpers.next.bind(this);
     this.back = helpers.back.bind(this);
   }
 
-  componentDidMount() { helpers.mount.call(this); }
+  componentDidMount() { metaHelpers.mount.call(this); }
 
   render() {
     const { songs, upNext, songFile, timestamp } = this.state;
