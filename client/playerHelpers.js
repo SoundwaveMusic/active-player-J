@@ -52,11 +52,6 @@ const playerHelpers = {
       clearInterval(this.timestampID);
     }
   },
-  tick(songFile) {
-    // Tick is called each second when playing,
-    //   storing the currentTime property from the Audio element
-    this.setState({ timestamp: songFile.currentTime });
-  },
   scrub(newTimestamp) {
     // Change the value of currentTime to the new timestamp
     // setState for the timestamp property

@@ -21,7 +21,7 @@ class App extends React.Component {
       timestamp: 0,
     };
     this.togglePlay = playerHelpers.togglePlay.bind(this);
-    this.tick = playerHelpers.tick.bind(this);
+    this.tick = metaHelpers.tick.bind(this);
     this.like = metaHelpers.like.bind(this);
     this.next = playerHelpers.next.bind(this);
     this.back = playerHelpers.back.bind(this);

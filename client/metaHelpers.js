@@ -21,6 +21,16 @@ const metaHelpers = {
       .then(() => console.log('state', this.state))
       .catch((err) => console.log('mount err: ', err));
   },
+  tick(songFile) {
+    // Tick is called each second when playing,
+    //   storing the currentTime property from the Audio element
+    this.setState({ timestamp: songFile.currentTime });
+    const isEnded = this.state.songFile.ended;
+    if (isEnded) {
+      clearInterval(this.timestampID);
+      this.next();
+    }
+  },
   like(songId, isLiked) {
     const { upNext } = this.state;
     //  Post to the "/like:songId" route to toggle like status
