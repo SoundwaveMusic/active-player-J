@@ -192,19 +192,19 @@ ANIMATED PLAYER--ANIMATED TIMELINE
     display: inline-block;
     height: 1px;
     width: 514px;
-    background-color: #999999;
+    background-color: #cecece;
     margin-top: 24px;
 }
 
 .animatedTimeline {
     display: inline-block;
-    height: 1px;
-    background-color: #FF5500;
+    vertical-align: top;
+    height: 1.5px;
+    background-color: #ea5138;
     transition: margin-left 1s linear;
-    /* transition-property: margin-left;
-    transition-duration: 1s;
-    transition-timing-function: linear; */
 }
+/* ea5138 */
+/* eb5b39 */
 
 /********************************************************
 INFO BAR--CONTAINER
