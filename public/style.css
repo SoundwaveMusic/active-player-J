@@ -215,13 +215,13 @@ ANIMATED PLAYER--ANIMATED TIMELINE
     display: inline-block;
     position: relative;
     vertical-align: top;
-    bottom: 4px;
+    bottom: 16px;
     height: 8px;
     width: 8px;
     border-radius: 4px;
     visibility: hidden;
-    z-index: 3;
-    transition: all;
+    z-index: 4;
+    transition: margin-left .2s ease-in;
 }
 
 .progressVisible {
