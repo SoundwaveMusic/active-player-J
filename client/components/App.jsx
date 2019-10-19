@@ -23,6 +23,7 @@ class App extends React.Component {
     this.tick = helpers.tick.bind(this);
     this.like = helpers.like.bind(this);
     this.next = helpers.next.bind(this);
+    this.back = helpers.back.bind(this);
   }
 
   componentDidMount() { helpers.mount.call(this); }
@@ -33,15 +34,15 @@ class App extends React.Component {
     return (
       <footer>
         <div id="container">
-          <Button id="back" />
+          <Button id="back" clickHandler={this.back} />
           {songFile && songFile.paused ? (
             <Play playSong={() => this.togglePlay(songFile)} />
           ) : (
             <Pause pauseSong={() => this.togglePlay(songFile)} />
           )}
           <Button id="next" clickHandler={this.next} />
-          <Button id="shuffle" />
-          <Button id="repeat" />
+          <Button id="shuffle" clickHandler={() => alert('Clicked shuffle!')} />
+          <Button id="repeat" clickHandler={() => alert('Clicked repeat!')} />
           <div id="player">
             {songFile
               && <Player length={upNext[0].length} timestamp={timestamp} />}

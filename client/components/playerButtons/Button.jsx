@@ -17,11 +17,7 @@ function Button({ id, clickHandler }) {
 
 Button.propTypes = {
   id: PropTypes.string.isRequired,
-  clickHandler: PropTypes.func,
+  clickHandler: PropTypes.func.isRequired,
 };
-
-Button.defaultProps = {
-  clickHandler: () => alert(`Clicked ${id}!`),
-}
 
 export default Button;
