@@ -22,6 +22,7 @@ class App extends React.Component {
     this.togglePlay = helpers.togglePlay.bind(this);
     this.tick = helpers.tick.bind(this);
     this.like = helpers.like.bind(this);
+    this.next = helpers.next.bind(this);
   }
 
   componentDidMount() { helpers.mount.call(this); }
@@ -38,7 +39,7 @@ class App extends React.Component {
           ) : (
             <Pause pauseSong={() => this.togglePlay(songFile)} />
           )}
-          <Button id="next" />
+          <Button id="next" clickHandler={this.next} />
           <Button id="shuffle" />
           <Button id="repeat" />
           <div id="player">
