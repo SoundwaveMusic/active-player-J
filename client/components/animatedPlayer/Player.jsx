@@ -8,7 +8,7 @@ function Player({ length, timestamp }) {
   return (
     <div>
       <CurrentTime elapsed={timestamp} />
-      <Timeline />
+      <Timeline length={length} elapsed={timestamp} />
       <Remaining length={length} elapsed={timestamp} />
     </div>
   );

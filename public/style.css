@@ -138,14 +138,14 @@ PLAYER BUTTONS
 #timeline,
 .timeline,
 .albumArt,
-#artist:focus,
-#title:focus,
+#artist,
+#title,
 .metaButton {
     outline: none;
 }
 
 /********************************************************
-ANIMATED PLAYER
+ANIMATED PLAYER--CONTAINER AND TIMESTAMPS
 ********************************************************/
 
 #player {
@@ -176,7 +176,11 @@ ANIMATED PLAYER
     cursor: pointer;
 }
 
-#timeline {
+/********************************************************
+ANIMATED PLAYER--ANIMATED TIMELINE
+********************************************************/
+
+#timelineContainer {
     display: inline-block;
     height: 50px;
     width: 514px;
@@ -184,7 +188,7 @@ ANIMATED PLAYER
     vertical-align: top;
 }
 
-.timeline {
+#timeline {
     display: inline-block;
     height: 1px;
     width: 514px;
@@ -192,8 +196,18 @@ ANIMATED PLAYER
     margin-top: 24px;
 }
 
+.animatedTimeline {
+    display: inline-block;
+    height: 1px;
+    background-color: #FF5500;
+    transition: margin-left 1s linear;
+    /* transition-property: margin-left;
+    transition-duration: 1s;
+    transition-timing-function: linear; */
+}
+
 /********************************************************
-INFO BAR
+INFO BAR--CONTAINER
 ********************************************************/
 
 #infoBar {
@@ -213,6 +227,10 @@ INFO BAR
     background-color: #f2f2f2;
     vertical-align: bottom;
 }
+
+/********************************************************
+INFO BAR--SONG INFO
+********************************************************/
 
 #albumArt {
     width: 32px;
@@ -252,6 +270,10 @@ INFO BAR
 #title:hover {
     color: black;
 }
+
+/********************************************************
+INFO BAR--META DATA
+********************************************************/
 
 #metaDataGrid {
     display: inline-grid;
