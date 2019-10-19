@@ -140,7 +140,8 @@ PLAYER BUTTONS
 .albumArt,
 #artist,
 #title,
-.metaButton {
+.metaButton,
+#timelineContainer {
     outline: none;
 }
 
