@@ -198,7 +198,7 @@ ANIMATED PLAYER--ANIMATED TIMELINE
     margin-top: 24px;
 }
 
-.animatedTimeline {
+#animatedTimeline {
     display: inline-block;
     vertical-align: top;
     height: 1.5px;
@@ -206,9 +206,28 @@ ANIMATED PLAYER--ANIMATED TIMELINE
     transition: width linear;
 }
 
-.animatedTimeline:hover {
+#animatedTimeline:hover {
     background-color: transparent;
 }
+
+#progressDot {
+    background-color: #ea5138;
+    display: inline-block;
+    position: relative;
+    vertical-align: top;
+    bottom: 4px;
+    height: 8px;
+    width: 8px;
+    border-radius: 4px;
+    visibility: hidden;
+    z-index: 3;
+    transition: all;
+}
+
+.progressVisible {
+    visibility: visible;
+}
+
 
 /********************************************************
 INFO BAR--CONTAINER
