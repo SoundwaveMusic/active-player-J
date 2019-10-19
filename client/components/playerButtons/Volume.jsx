@@ -5,28 +5,31 @@ class Volume extends React.Component {
   constructor(props) {
     super(props);
     this.state = { volume: props.songFile.volume, isMuted: false };
+    this.muteToggle = this.muteToggle.bind(this);
   }
 
-  muteToggle(e) {
-    const { volume } = this.state; 
+  muteToggle() {
+    const { volume, isMuted } = this.state;
     const { songFile } = this.props;
-    if (volume > 0) {
-      songFile.volume = 0;
-    } else {
+    if (isMuted) {
       songFile.volume = volume;
+    } else {
+      songFile.volume = 0;
     }
+    this.setState({ isMuted: !isMuted });
   }
 
   render() {
-    const { songFile } = this.props;
+    const { isMuted } = this.state;
+
     return (
       <span>
         <button
           type="button"
-          id="volume"
+          id={isMuted ? 'mute' : 'volume'}
           className="button"
-          onClick={() => songFile.volume = 0}
-          aria-label="volume"
+          onClick={this.muteToggle}
+          aria-label={isMuted ? 'un-mute' : 'mute'}
         />
       </span>
     );
