@@ -21,15 +21,45 @@ const metaHelpers = {
       .then(() => console.log('state', this.state))
       .catch((err) => console.log('mount err: ', err));
   },
-  tick(songFile) {
-    // Tick is called each second when playing,
-    //   storing the currentTime property from the Audio element
-    this.setState({ timestamp: songFile.currentTime });
-    const isEnded = this.state.songFile.ended;
+  tick(songfile) {
+    const { songs, upNext, previousPlays, repeat, songFile } = this.state;
+    // If the song has ended
+    //   1) clear the interval,
+    //   2) repeat song if necessary,
+    //   3) call next if possible,
+    //   4) if repeating all AND at the end, restart with previousPlays
+    const isEnded = songFile.ended;
     if (isEnded) {
       clearInterval(this.timestampID);
-      this.next();
+      if (repeat === 'Song') {
+        songFile.currentTime = 0;
+        this.setState({ timestamp: 0 });
+      } else if (songs.length > 0 || upNext.length > 0) {
+        this.next();
+      } else if (repeat === 'List') {
+        // axios request, keep previous Plays
+      }
+    } else {
+      // Tick is called each second when playing,
+      //   storing the currentTime property from the Audio element
+      this.setState({ timestamp: songfile.currentTime });
     }
+  },
+  shuffle() {
+
+  },
+  repeat() {
+    const { repeat } = this.state;
+    let newStatus;
+    //  check repeat state and rotate between: '' to 'List' to 'Song' back to ''
+    if (repeat === '') {
+      newStatus = 'List';
+    } else if (repeat === 'List') {
+      newStatus = 'Song';
+    } else {
+      newStatus = '';
+    }
+    this.setState({ repeat: newStatus });
   },
   like(songId, isLiked) {
     const { upNext } = this.state;

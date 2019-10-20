@@ -19,19 +19,22 @@ class App extends React.Component {
       previousPlays: [],
       songFile: null,
       timestamp: 0,
+      repeat: '',
     };
+    this.back = playerHelpers.back.bind(this);
     this.togglePlay = playerHelpers.togglePlay.bind(this);
     this.tick = metaHelpers.tick.bind(this);
-    this.like = metaHelpers.like.bind(this);
     this.next = playerHelpers.next.bind(this);
-    this.back = playerHelpers.back.bind(this);
+    this.shuffle = metaHelpers.shuffle.bind(this);
+    this.repeat = metaHelpers.repeat.bind(this);
     this.scrub = playerHelpers.scrub.bind(this);
+    this.like = metaHelpers.like.bind(this);
   }
 
   componentDidMount() { metaHelpers.mount.call(this); }
 
   render() {
-    const { songs, upNext, songFile, timestamp } = this.state;
+    const { songs, upNext, songFile, timestamp, repeat } = this.state;
 
     return (
       <footer>
@@ -44,7 +47,7 @@ class App extends React.Component {
           )}
           <Button id="next" clickHandler={this.next} />
           <Button id="shuffle" clickHandler={() => alert('Clicked shuffle!')} />
-          <Button id="repeat" clickHandler={() => alert('Clicked repeat!')} />
+          <Button id={`repeat${repeat}`} clickHandler={this.repeat} />
           <div id="player">
             {songFile
               && <Player length={upNext[0].length} timestamp={timestamp} scrub={this.scrub} />}
