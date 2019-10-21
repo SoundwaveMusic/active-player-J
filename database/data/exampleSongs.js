@@ -79,17 +79,6 @@ module.exports = [
     thumbnail: faker.image.imageUrl(),
   },
   {
-    songId: 334,
-    length: 163,
-    timestamp: 0,
-    isliked: Math.floor(Math.random() * 2),
-    songFile: 'https://sound-clout.s3-us-west-1.amazonaws.com/The_Getaway.mp3',
-    title: 'The Getaway',
-    artist: 'The Whole Other',
-    album: faker.commerce.productName(),
-    thumbnail: faker.image.imageUrl(),
-  },
-  {
     songId: 335,
     length: 184,
     timestamp: 0,
@@ -113,7 +102,7 @@ module.exports = [
   },
   {
     songId: 223,
-    length: 123,
+    length: 153,
     timestamp: 0,
     isliked: Math.floor(Math.random() * 2),
     songFile: 'https://sound-clout.s3-us-west-1.amazonaws.com/Glory_Be.mp3',
@@ -124,7 +113,7 @@ module.exports = [
   },
   {
     songId: 224,
-    length: 98,
+    length: 177,
     timestamp: 0,
     isliked: Math.floor(Math.random() * 2),
     songFile: 'https://sound-clout.s3-us-west-1.amazonaws.com/Timeless.mp3',

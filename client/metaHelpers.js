@@ -28,6 +28,7 @@ const metaHelpers = {
     //   2) repeat song if necessary,
     //   3) call next if possible,
     //   4) if repeating all AND at the end, restart with previousPlays
+    console.log('duration of the song: ', songFile.duration);
     const isEnded = songFile.ended;
     if (isEnded) {
       clearInterval(this.timestampID);
@@ -37,7 +38,8 @@ const metaHelpers = {
       } else if (songs.length > 0 || upNext.length > 0) {
         this.next();
       } else if (repeat === 'List') {
-        // axios request, keep previous Plays
+        // mount makes a request for the songList, and resets state for songs, upNext, and songFile
+        this.mount();
       }
     } else {
       // Tick is called each second when playing,

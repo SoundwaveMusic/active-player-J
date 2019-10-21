@@ -20,6 +20,7 @@ class App extends React.Component {
       songFile: null,
       timestamp: 0,
       repeat: '',
+      volume: .7
     };
     this.back = playerHelpers.back.bind(this);
     this.togglePlay = playerHelpers.togglePlay.bind(this);

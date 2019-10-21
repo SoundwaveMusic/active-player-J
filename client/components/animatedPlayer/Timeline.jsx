@@ -10,18 +10,7 @@ class Timeline extends React.Component {
     this.hideProgressDot = this.hideProgressDot.bind(this);
   }
 
-  showProgressDot(e) {
-    // console.log('getting location...');
-    // const { length, elapsed } = this.props;
-    // const leftTlineBound = e.target.getBoundingClientRect().left;
-    // const rightTlineBound = e.target.getBoundingClientRect().right;
-    // // To get the totalWidth: Subtract the left bound from the right bound
-    // // Divide elapsed by length to geth the ratio of the total
-    // // Multiply by element length to get the horizontal location of the progress dot
-    // let progressDotLocation = (elapsed / length) * (rightTlineBound - leftTlineBound);
-    // progressDotLocation = newLocation || progressDotLocation;
-    // console.log('location ', progressDotLocation);
-    // left: `${progressDotLocation}px` 
+  showProgressDot() {
     this.setState({
       progressDotStyles: { visibility: 'visible' },
     });
@@ -29,13 +18,19 @@ class Timeline extends React.Component {
 
   updateTimestamp(e) {
     const { length, scrub } = this.props;
-    const leftTlineBound = e.target.getBoundingClientRect().left;
-    const rightTlineBound = e.target.getBoundingClientRect().right;
-    const clickLocation = e.clientX;
+    const boundingRectangle = document.getElementById('timelineContainer').getBoundingClientRect();
+    const leftTlineBound = boundingRectangle.left;
+    const rightTlineBound = boundingRectangle.right;
+    let clickLocation = e.clientX;
+    if (clickLocation < 0) {
+      clickLocation = 0;
+    } else if (clickLocation > rightTlineBound) {
+      clickLocation = rightTlineBound;
+    }
     // To get the scrubLocation: Subtract the left bound from the click location
     // To get the totalWidth: Subtract the left bound from the right bound
     // Divide scrubLocation by totalWidth to geth the ratio of the total
-    let newTimestamp = ((clickLocation - leftTlineBound) / (rightTlineBound - leftTlineBound));
+    let newTimestamp = (clickLocation - leftTlineBound) / (rightTlineBound - leftTlineBound);
     // Multiply by the song length to get the new timestamp
     newTimestamp *= length;
     scrub(newTimestamp);
@@ -60,7 +55,7 @@ class Timeline extends React.Component {
         id="timelineContainer"
         onMouseOver={this.showProgressDot}
         onFocus={this.showProgressDot}
-        // onDrag={this.updateTimestamp}
+        onDrag={this.updateTimestamp}
         onMouseLeave={this.hideProgressDot}
         onClick={this.updateTimestamp}
         onKeyDown={this.updateTimestamp}
