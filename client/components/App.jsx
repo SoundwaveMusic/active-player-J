@@ -8,6 +8,7 @@ import Button from './playerButtons/Button';
 import Volume from './playerButtons/Volume';
 import Player from './animatedPlayer/Player';
 import InfoBar from './SongInfo/InfoBar';
+import styles from '../cssModules/app.css';
 
 
 class App extends React.Component {
@@ -36,9 +37,9 @@ class App extends React.Component {
 
   render() {
     const { songs, upNext, songFile, timestamp, repeat } = this.state;
-
+    
     return (
-      <footer>
+      <footer className={styles.test}> 
         <div id="container">
           <Button id="back" clickHandler={this.back} />
           {songFile && songFile.paused ? (
