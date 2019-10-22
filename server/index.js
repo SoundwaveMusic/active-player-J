@@ -9,13 +9,13 @@ const port = 3020;
 
 const jsonParser = bodyParser.json();
 
-var corsOptions = {
-    origin: true,
-    methods:['GET', 'POST'],
-    // optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
-  }
+// var corsOptions = {
+//     origin: true,
+//     methods:['GET', 'POST'],
+//     // optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
+//   }
 
-app.use(cors(corsOptions))
+app.use(cors());
 
 app.use(express.static(path.join(__dirname, '../public')));
 

@@ -67,8 +67,8 @@ const metaHelpers = {
   like(songId, isLiked) {
     const { upNext } = this.state;
     //  Post to the "/like:songId" route to toggle like status
-    axios.post(`/like/${songId}`, { isliked: isLiked })
-      .then(() => axios.get('./songs'))
+    axios.post(`http://localhost:3020/like/${songId}`, { isliked: isLiked })
+      .then(() => axios.get('http://localhost:3020/songs'))
       .then((results) => {
         const songs = results.data;
         // if songId is current player song, toggle isliked to re-render "like" status
