@@ -9,20 +9,20 @@ function InfoBar({ playerSong, like }) {
   };
 
   return (
-    <div id="infoContainer">
+    <div className="infoContainer">
       <div
-        id="albumArt"
+        className="albumArt"
         role="button"
         onClick={() => click('album', playerSong.album)}
         onKeyDown={() => click('album', playerSong.album)}
         tabIndex="-1"
         aria-label="album"
       >
-        <img className="albumArt" alt="album artwork" src={playerSong.thumbnail} />
+        <img className="albumThumbnail" alt="album artwork" src={playerSong.thumbnail} />
       </div>
-      <div id="infoGrid">
+      <div className="infoGrid">
         <div
-          id="artist"
+          className="artist"
           role="button"
           onClick={() => click('artist', playerSong.artist)}
           onKeyDown={() => click('artist', playerSong.artist)}
@@ -32,7 +32,7 @@ function InfoBar({ playerSong, like }) {
           {playerSong.artist}
         </div>
         <div
-          id="title"
+          className="title"
           role="button"
           onClick={() => click('song', playerSong.title)}
           onKeyDown={() => click('song', playerSong.title)}

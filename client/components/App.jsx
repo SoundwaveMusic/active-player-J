@@ -8,8 +8,8 @@ import Button from './playerButtons/Button';
 import Volume from './playerButtons/Volume';
 import Player from './animatedPlayer/Player';
 import InfoBar from './SongInfo/InfoBar';
-// import styles from '../cssModules/app.css';
-import '../../public/style.css';
+import styles from '../cssModules/app.css';
+// import '../../public/style.css';
 
 
 class App extends React.Component {
@@ -40,23 +40,23 @@ class App extends React.Component {
     const { songs, upNext, songFile, timestamp, repeat } = this.state;
     // className={styles.test}
     return (
-      <footer> 
-        <div id="container">
-          <Button id="back" clickHandler={this.back} />
+      <footer className={styles.footer}> 
+        <div className={styles.container}>
+          <Button className="back" clickHandler={this.back} />
           {songFile && songFile.paused ? (
             <Play playSong={() => this.togglePlay(songFile)} />
           ) : (
             <Pause pauseSong={() => this.togglePlay(songFile)} />
           )}
-          <Button id="next" clickHandler={this.next} />
-          <Button id="shuffle" clickHandler={() => alert('Clicked shuffle!')} />
-          <Button id={`repeat${repeat}`} clickHandler={this.repeat} />
-          <div id="player">
+          <Button className="next" clickHandler={this.next} />
+          <Button className="shuffle" clickHandler={() => alert('Clicked shuffle!')} />
+          <Button className={`repeat${repeat}`} clickHandler={this.repeat} />
+          <div className="player">
             {songFile
               && <Player length={upNext[0].length} timestamp={timestamp} scrub={this.scrub} />}
           </div>
           {songFile && <Volume songFile={songFile} />}
-          <div id="infoBar">
+          <div className="infoBar">
             {upNext[0]
               && <InfoBar playerSong={upNext[0]} like={this.like} />}
           </div>

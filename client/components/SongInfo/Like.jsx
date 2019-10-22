@@ -8,8 +8,7 @@ function Like({ songId, isLiked, like }) {
 
   return (
     <div
-      className="like metaButton"
-      id={isLiked ? 'liked' : 'like'}
+      className={isLiked ? 'liked likeMeta metaButton' : 'like likeMeta metaButton'}
       onClick={click}
       onKeyDown={click}
       role="button"

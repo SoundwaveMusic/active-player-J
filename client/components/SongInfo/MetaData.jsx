@@ -6,7 +6,7 @@ import UpNext from './UpNext';
 function MetaData({ songId, isLiked, like }) {
 
   return (
-    <div id="metaDataGrid">
+    <div className="metaDataGrid">
       <Like songId={songId} isLiked={isLiked} like={like} />
       <UpNext />
     </div>

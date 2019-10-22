@@ -1,57 +1,7 @@
-/* http://meyerweb.com/eric/tools/css/reset/ 
-   v2.0 | 20110126
-   License: none (public domain)
-*/
-
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
-}
-/* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
-	display: block;
-}
-body {
-    line-height: 1;
-    height: 100%;
-}
-ol, ul {
-	list-style: none;
-}
-blockquote, q {
-	quotes: none;
-}
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
-}
-table {
-	border-collapse: collapse;
-	border-spacing: 0;
-}
-
 /********************************************************
 FOOTER STYLING
 ********************************************************/
-footer {
+.footer {
     height: 50px;
     font-family: 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     color: #333333;
@@ -63,7 +13,7 @@ footer {
     background-color: #f2f2f2;
     border-top: .5px solid #cecece;
 }
-#container {
+.container {
     width: 1240px;
     margin: auto;
     background-color: #f2f2f2;
@@ -85,63 +35,63 @@ PLAYER BUTTONS
     background-color: #f2f2f2;
 }
 
-#play {
+.play {
     background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCI+PHBhdGggZmlsbD0iIzMzMyIgZD0iTTggNXYxNGwxMS03eiIvPjwvc3ZnPgo=);
 }
 
 
-#pause {
+.pause {
     background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCI+PHBhdGggZmlsbD0iIzMzMyIgZD0iTTYgMTloNFY1SDZ2MTR6bTgtMTR2MTRoNFY1aC00eiIvPjwvc3ZnPgo=);
 }
 
 
-#back {
+.back {
     background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCI+PHBhdGggZmlsbD0iIzMzMyIgZD0iTTcgNmgydjEySDdWNnptMiA2bDggNlY2bC04IDZ6Ii8+PC9zdmc+Cg==);
 }
 
-#next {
+.next {
     background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCI+PHBhdGggZmlsbD0iIzMzMyIgZD0iTTcgMThsOC02LTgtNnYxMnptOC0xMnYxMmgyVjZoLTJ6Ii8+PC9zdmc+Cg==);
 }
 
-#shuffle {
+.shuffle {
     background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCI+PHBhdGggZmlsbD0iIzMzMyIgZD0iTTEzLjU4NiAxN2wtOC04SDNWN2gzLjQxNGw4IDhIMTd2MmgtMy40MTR6TTMgMTVoMi41ODZsMi4yMDctMi4yMDcgMS40MTQgMS40MTQtMi41MDEgMi41MDEtLjI5My4yOTJIM3YtMnptMTQtNmgtMi41ODZsLTIuMjA3IDIuMjA3LTEuNDE0LTEuNDE0TDEzLjU4NiA3SDE3djJ6bTQgN2wtNCAzdi02bDQgM3ptMC04bC00IDNWNWw0IDN6Ii8+PC9zdmc+Cg==);
 }
 
-#shuffle-alt {
+.shuffle-alt {
     background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCI+PHBhdGggZmlsbD0iI2Y1MCIgZD0iTTEzLjU4NiAxN2wtOC04SDNWN2gzLjQxNGw4IDhIMTd2MmgtMy40MTR6TTMgMTVoMi41ODZsMi4yMDctMi4yMDcgMS40MTQgMS40MTQtMi41MDEgMi41MDEtLjI5My4yOTJIM3YtMnptMTQtNmgtMi41ODZsLTIuMjA3IDIuMjA3LTEuNDE0LTEuNDE0TDEzLjU4NiA3SDE3djJ6bTQgN2wtNCAzdi02bDQgM3ptMC04bC00IDNWNWw0IDN6Ii8+PC9zdmc+Cg==);
 }
 
-#repeat {
+.repeat {
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24'%3E%3Cpath fill='%23333' d='M12 8H9a4 4 0 1 0 0 8h6a4 4 0 0 0 2.104-7.403l1.77-1.18.02.018A6 6 0 0 1 15 18H9A6 6 0 1 1 9 6h3V4l4 3-4 3V8z'/%3E%3C/svg%3E");
 }
 
-#repeatList {
+.repeatList {
     background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCI+PHBhdGggZmlsbD0iI2Y1MCIgZD0iTTEyIDhIOWE0IDQgMCAxIDAgMCA4aDZhNCA0IDAgMCAwIDIuMTA0LTcuNDAzbDEuNzctMS4xOC4wMi4wMThBNiA2IDAgMCAxIDE1IDE4SDlBNiA2IDAgMSAxIDkgNmgzVjRsNCAzLTQgM1Y4eiIvPjwvc3ZnPgo=);
 }
 
-#repeatSong {
+.repeatSong {
     background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCI+PHBhdGggZmlsbD0iI2Y1MCIgZD0iTTExLjAyNyAxNmE0LjU1IDQuNTUgMCAwIDAgLjIzIDJIOUE2IDYgMCAxIDEgOSA2aDNWNGw0IDMtNCAzVjhIOWE0IDQgMCAxIDAgMCA4aDIuMDI3em03LjcyNS0yLjYxYTMuOTk3IDMuOTk3IDAgMCAwLTEuNjQ4LTQuNzkybDEuNzctMS4xOC4wMi4wMTdBNS45ODcgNS45ODcgMCAwIDEgMjEgMTJjMCAxLjMtLjQxMyAyLjUwMy0xLjExNiAzLjQ4NmE0LjQ5NiA0LjQ5NiAwIDAgMC0xLjEzMi0yLjA5NnoiLz48cGF0aCBmaWxsPSIjZjUwIiBkPSJNMTUuNSAyMGEzLjUgMy41IDAgMSAxIDAtNyAzLjUgMy41IDAgMCAxIDAgN3ptLS41LTV2NGgxdi00aC0xem0tMSAwdjFoMXYtMWgtMXoiLz48L3N2Zz4K);
 }
 
-#volume {
+.volume {
     width: 26px;
     background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCI+PHBhdGggZmlsbD0iIzMzMyIgZD0iTTQgOWg0LjAwMkwxMiA1djE0Yy0yLjQ0Ni0yLjY2Ny0zLjc3OC00LTMuOTk4LTRINFY5em0xMCA0YTEgMSAwIDAgMCAwLTJWOWEzIDMgMCAwIDEgMCA2di0yeiIvPjwvc3ZnPgo=);
 }
 
-#mute {
+.mute {
     width: 26px;
     background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCI+PHBhdGggZmlsbD0iIzMzMyIgZD0iTTE4IDEwLjU4NGwtMi4yOTMtMi4yOTEtMS40MTQgMS40MTQgMi4yOTMgMi4yOTEtMi4yOTEgMi4yOTEgMS40MTQgMS40MTUgMi4yOTItMi4yOTIgMi4yOTQgMi4yOTIgMS40MTQtMS40MTUtMi4yOTMtMi4yOTEgMi4yOTEtMi4yOS0xLjQxNC0xLjQxNS0yLjI5MiAyLjI5MXpNNCA5aDQuMDAyTDEyIDV2MTRjLTIuNDQ2LTIuNjY3LTMuNzc4LTQtMy45OTgtNEg0Vjl6Ii8+PC9zdmc+Cg==);
 }
 
 .button,
-#remaining,
-#timeline,
+.remaining,
+.timeline,
 .timeline,
 .albumArt,
-#artist,
-#title,
+.artist,
+.title,
 .metaButton,
-#timelineContainer {
+.timelineContainer {
     outline: none;
 }
 
@@ -149,7 +99,7 @@ PLAYER BUTTONS
 ANIMATED PLAYER--CONTAINER AND TIMESTAMPS
 ********************************************************/
 
-#player {
+.player {
     height: 50px;
     width: 633px;
     display: inline-block;
@@ -165,13 +115,13 @@ ANIMATED PLAYER--CONTAINER AND TIMESTAMPS
     display: inline-block;
 }
 
-#currentTime {
+.currentTime {
     margin-top: 17.5px;
     float: right;
     color: #FF5500;
 }
 
-#remaining {
+.remaining {
     margin-top: 17.5px;
     float: left;
     cursor: pointer;
@@ -181,7 +131,7 @@ ANIMATED PLAYER--CONTAINER AND TIMESTAMPS
 ANIMATED PLAYER--ANIMATED TIMELINE
 ********************************************************/
 
-#timelineContainer {
+.timelineContainer {
     display: inline-block;
     height: 50px;
     width: 514px;
@@ -190,7 +140,7 @@ ANIMATED PLAYER--ANIMATED TIMELINE
     cursor: pointer;
 }
 
-#timeline {
+.timeline {
     display: inline-block;
     height: 1px;
     width: 514px;
@@ -198,7 +148,7 @@ ANIMATED PLAYER--ANIMATED TIMELINE
     margin-top: 24px;
 }
 
-#animatedTimeline {
+.animatedTimeline {
     display: inline-block;
     vertical-align: top;
     height: 1.5px;
@@ -207,11 +157,11 @@ ANIMATED PLAYER--ANIMATED TIMELINE
     position: relative;
 }
 
-#animatedTimeline:hover {
+.animatedTimeline:hover {
     background-color: transparent;
 }
 
-#progressDot {
+.progressDot {
     background-color: #ea5138;
     display: inline-block;
     position: absolute;
@@ -235,7 +185,7 @@ ANIMATED PLAYER--ANIMATED TIMELINE
 INFO BAR--CONTAINER
 ********************************************************/
 
-#infoBar {
+.infoBar {
     height: 50px;
     width: 360px;
     display: inline-block;
@@ -245,7 +195,7 @@ INFO BAR--CONTAINER
     font-size: 11px;
 }
 
-#infoContainer {
+.infoContainer {
     width: 346px;
     margin-left: auto;
     margin-right: auto;
@@ -257,19 +207,19 @@ INFO BAR--CONTAINER
 INFO BAR--SONG INFO
 ********************************************************/
 
-#albumArt {
+.albumArt {
     width: 32px;
     display: inline-block;
     height: 32px;
     margin: 9px 8px 9px 0;
 }
 
-.albumArt {
+.albumThumbnail {
     width: 31px;
     height: 31px;
 }
 
-#infoGrid {
+.infoGrid {
     display: inline-grid;
     grid-template-columns: repeat(1, 248px);
     grid-auto-rows: 17px;
@@ -278,21 +228,21 @@ INFO BAR--SONG INFO
     margin-bottom: 8px;
 }
 
-#artist {
+.artist {
     grid-column: 1;
     grid-row: 1;
     cursor: pointer;
     color: #999999;
 }
 
-#title {
+.title {
     grid-column: 1;
     grid-row: 2;
     cursor: pointer
 }
 
-#artist:hover,
-#title:hover {
+.artist:hover,
+.title:hover {
     color: black;
 }
 
@@ -300,7 +250,7 @@ INFO BAR--SONG INFO
 INFO BAR--META DATA
 ********************************************************/
 
-#metaDataGrid {
+.metaDataGrid {
     display: inline-grid;
     grid-template-columns: repeat(2, 24px);
     grid-auto-rows: 24px;
@@ -309,7 +259,7 @@ INFO BAR--META DATA
     margin-left: 10px;
 }
 
-.like {
+.likeMeta {
     grid-column: 1;
     grid-row: 1;
 }
@@ -320,20 +270,20 @@ INFO BAR--META DATA
     background-position: center;
 }
 
-#liked {
+.liked {
     background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAxNiAxNiIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48dGl0bGU+c3RhdHNfbGlrZXNfZ3JleTwvdGl0bGU+PHBhdGggZD0iTTEwLjgwNSAzYy0yLjAyIDAtMi44MDQgMi4zNDUtMi44MDQgMi4zNDVTNy4yMTMgMyA1LjE5NiAzQzMuNDk0IDMgMS43NDggNC4wOTYgMi4wMyA2LjUxNGMuMzQ0IDIuOTUzIDUuNzI1IDYuNDc5IDUuOTYzIDYuNDg3LjIzOC4wMDggNS43MzgtMy43MjIgNS45ODgtNi41QzE0LjE4OCA0LjIwMSAxMi41MDcgMyAxMC44MDUgM3oiIGZpbGw9IiNGNTAiIGZpbGwtcnVsZT0iZXZlbm9kZCIvPjwvc3ZnPg==);
 }
 
-#like {
+.like {
     background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAxNiAxNiIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48dGl0bGU+c3RhdHNfbGlrZXNfZ3JleTwvdGl0bGU+PHBhdGggZD0iTTEwLjgwNSAzYy0yLjAyIDAtMi44MDQgMi4zNDUtMi44MDQgMi4zNDVTNy4yMTMgMyA1LjE5NiAzQzMuNDk0IDMgMS43NDggNC4wOTYgMi4wMyA2LjUxNGMuMzQ0IDIuOTUzIDUuNzI1IDYuNDc5IDUuOTYzIDYuNDg3LjIzOC4wMDggNS43MzgtMy43MjIgNS45ODgtNi41QzE0LjE4OCA0LjIwMSAxMi41MDcgMyAxMC44MDUgM3oiIGZpbGw9IiMyMjIiIGZpbGwtcnVsZT0iZXZlbm9kZCIvPjwvc3ZnPg==);
 }
 
-.upNext {
+.upNextMeta {
     grid-column: 2;
     grid-row: 1;
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24'%3E%3Cpath fill='%23333' class='playbackSoundBadge__queueIcon' d='M6 11h12v2H6zM6 7h8v2H6zM6 15h12v2H6zM16 3v6l4-3z'%3E%3C/path%3E%3C/svg%3E");
 }
-.upNext-alt {
+.upNextMeta-alt {
     grid-column: 2;
     grid-row: 1;
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24'%3E%3Cpath fill='%23f50' class='playbackSoundBadge__queueIcon' d='M6 11h12v2H6zM6 7h8v2H6zM6 15h12v2H6zM16 3v6l4-3z'%3E%3C/path%3E%3C/svg%3E");

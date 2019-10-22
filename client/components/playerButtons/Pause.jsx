@@ -6,8 +6,7 @@ function Pause({ pauseSong }) {
     <span>
       <button
         type="button"
-        id="pause"
-        className="button"
+        className="pause button"
         onClick={pauseSong}
         aria-label="pause"
       />

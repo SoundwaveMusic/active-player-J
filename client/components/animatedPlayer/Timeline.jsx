@@ -52,7 +52,7 @@ class Timeline extends React.Component {
 
     return (
       <div
-        id="timelineContainer"
+        className="timelineContainer"
         onMouseOver={this.showProgressDot}
         onFocus={this.showProgressDot}
         onDrag={this.updateTimestamp}
@@ -63,9 +63,9 @@ class Timeline extends React.Component {
         tabIndex="-1"
         aria-label="song progress bar"
       >
-        <div id="timeline">
-          <div id="animatedTimeline" style={animatedStyles}>
-            <div id="progressDot" style={progressDotStyles} />
+        <div className="timeline">
+          <div className="animatedTimeline" style={animatedStyles}>
+            <div className="progressDot" style={progressDotStyles} />
           </div>
         </div>
       </div>

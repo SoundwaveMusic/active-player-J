@@ -1,22 +1,23 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import styles from '../../cssModules/button.css';
 
-function Button({ id, clickHandler }) {
+function Button({ className, clickHandler }) {
+  
   return (
     <span>
       <button
         type="button"
-        id={id}
-        className="button"
+        className={styles[className]}
         onClick={clickHandler}
-        aria-label={id}
+        aria-label={className}
       />
     </span>
   );
 }
 
 Button.propTypes = {
-  id: PropTypes.string.isRequired,
+  className: PropTypes.string.isRequired,
   clickHandler: PropTypes.func.isRequired,
 };
 

@@ -6,8 +6,7 @@ function Play({ playSong }) {
     <span>
       <button
         type="button"
-        id="play"
-        className="button"
+        className="play button"
         onClick={playSong}
         aria-label="play"
       />

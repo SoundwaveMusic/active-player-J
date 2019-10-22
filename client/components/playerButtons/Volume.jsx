@@ -26,8 +26,7 @@ class Volume extends React.Component {
       <span>
         <button
           type="button"
-          id={isMuted ? 'mute' : 'volume'}
-          className="button"
+          className={isMuted ? 'mute button' : 'volume button'}
           onClick={this.muteToggle}
           aria-label={isMuted ? 'un-mute' : 'mute'}
         />

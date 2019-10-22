@@ -23,7 +23,7 @@ class Remaining extends React.Component {
     return (
       <div className="timeBox">
         <span
-          id="remaining"
+          className="remaining"
           onClick={this.handleClick}
           onKeyDown={this.handleClick}
           role="button"

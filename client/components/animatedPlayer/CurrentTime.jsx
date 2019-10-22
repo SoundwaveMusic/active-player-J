@@ -7,7 +7,7 @@ function CurrentTime({ elapsed }) {
 
   return (
     <div className="timeBox">
-      <span id="currentTime">{time}</span>
+      <span className="currentTime">{time}</span>
     </div>
   );
 }
