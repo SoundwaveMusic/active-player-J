@@ -1,5 +1,6 @@
 import React from 'react';
 // import PropTypes from 'prop-types';
+import styles from '../../cssModules/infobar.css';
 
 class UpNext extends React.Component {
   constructor(props) {
@@ -17,7 +18,7 @@ class UpNext extends React.Component {
     const { clicked } = this.state;
     return (
       <div
-        className={clicked ? 'upNextMeta-alt metaButton' : 'upNextMeta metaButton'}
+        className={clicked ? styles.upNextMeta-alt : styles.upNextMeta}
         onClick={this.handleClick}
         onKeyDown={this.handleClick}
         role="button"

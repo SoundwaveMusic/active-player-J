@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import MetaData from './MetaData';
-import styles from '../../cssModules/infobar.css'
+import styles from '../../cssModules/infobar.css';
 
 
 function InfoBar({ playerSong, like }) {

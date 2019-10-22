@@ -2,11 +2,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Like from './Like';
 import UpNext from './UpNext';
+import styles from '../../cssModules/infobar.css'
 
 function MetaData({ songId, isLiked, like }) {
 
   return (
-    <div className="metaDataGrid">
+    <div className={styles.metaDataGrid}>
       <Like songId={songId} isLiked={isLiked} like={like} />
       <UpNext />
     </div>

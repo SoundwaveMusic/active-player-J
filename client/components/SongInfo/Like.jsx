@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import styles from '../../cssModules/infobar.css';
 
 function Like({ songId, isLiked, like }) {
   const click = () => {
@@ -8,7 +9,7 @@ function Like({ songId, isLiked, like }) {
 
   return (
     <div
-      className={isLiked ? 'liked likeMeta metaButton' : 'like likeMeta metaButton'}
+      className={isLiked ? styles.liked : styles.like}
       onClick={click}
       onKeyDown={click}
       role="button"
