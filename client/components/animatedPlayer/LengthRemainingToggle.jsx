@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import getTime from './getTime';
+import styles from '../../cssModules/player.css';
 
 class Remaining extends React.Component {
   constructor(props) {
@@ -21,9 +22,9 @@ class Remaining extends React.Component {
     const total = getTime(length);
 
     return (
-      <div className="timeBox">
+      <div className={styles.timeBox}>
         <span
-          className="remaining"
+          className={styles.remaining}
           onClick={this.handleClick}
           onKeyDown={this.handleClick}
           role="button"

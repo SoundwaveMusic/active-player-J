@@ -1,12 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import styles from '../../cssModules/button.css';
 
 function Play({ playSong }) {
   return (
     <span>
       <button
         type="button"
-        className="play button"
+        className={styles.play}
         onClick={playSong}
         aria-label="play"
       />

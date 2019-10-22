@@ -51,7 +51,7 @@ class App extends React.Component {
           <Button className="next" clickHandler={this.next} />
           <Button className="shuffle" clickHandler={() => alert('Clicked shuffle!')} />
           <Button className={`repeat${repeat}`} clickHandler={this.repeat} />
-          <div className="player">
+          <div className={styles.player}>
             {songFile
               && <Player length={upNext[0].length} timestamp={timestamp} scrub={this.scrub} />}
           </div>

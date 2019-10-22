@@ -16,3 +16,13 @@
     background-color: #f2f2f2;
     border-top: .5px solid #cecece;
 }
+
+.player {
+    height: 50px;
+    width: 633px;
+    display: inline-block;
+    vertical-align: top;
+    margin-left: 20px;
+    background-color: #f2f2f2;
+
+}

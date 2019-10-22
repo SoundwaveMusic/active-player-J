@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import styles from '../../cssModules/player.css';
 
 class Timeline extends React.Component {
   constructor(props) {
@@ -18,7 +19,7 @@ class Timeline extends React.Component {
 
   updateTimestamp(e) {
     const { length, scrub } = this.props;
-    const boundingRectangle = document.getElementById('timelineContainer').getBoundingClientRect();
+    const boundingRectangle = document.getElementsByClassName(styles.timelineContainer)[0].getBoundingClientRect();
     const leftTlineBound = boundingRectangle.left;
     const rightTlineBound = boundingRectangle.right;
     let clickLocation = e.clientX;
@@ -52,7 +53,7 @@ class Timeline extends React.Component {
 
     return (
       <div
-        className="timelineContainer"
+        className={styles.timelineContainer}
         onMouseOver={this.showProgressDot}
         onFocus={this.showProgressDot}
         onDrag={this.updateTimestamp}
@@ -63,9 +64,9 @@ class Timeline extends React.Component {
         tabIndex="-1"
         aria-label="song progress bar"
       >
-        <div className="timeline">
-          <div className="animatedTimeline" style={animatedStyles}>
-            <div className="progressDot" style={progressDotStyles} />
+        <div className={styles.timeline}>
+          <div className={styles.animatedTimeline} style={animatedStyles}>
+            <div className={styles.progressDot} style={progressDotStyles} />
           </div>
         </div>
       </div>
