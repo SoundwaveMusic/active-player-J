@@ -3,8 +3,9 @@ import axios from 'axios';
 const metaHelpers = {
   // Current Player song will always be the first song in the next up playlist
   mount() {
-    axios.get('/songs')
+    axios.get('http://localhost:3020/songs')
       .then((results) => {
+        console.log('get songs reesults: ', results.data);
         // 1) Get all the songs as the default playlist
         const songs = results.data;
         // 2) Splice out first song and push to upNext playlist

@@ -1,12 +1,21 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const path = require('path');
+var cors = require('cors')
 const cb = require('./routeCallbacks');
 
 const app = express();
 const port = 3020;
 
-const jsonParser = bodyParser.json()
+const jsonParser = bodyParser.json();
+
+var corsOptions = {
+    origin: true,
+    methods:['GET', 'POST'],
+    // optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
+  }
+
+app.use(cors(corsOptions))
 
 app.use(express.static(path.join(__dirname, '../public')));
 
