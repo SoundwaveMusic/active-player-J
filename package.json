@@ -4,8 +4,8 @@
   "description": "This features an animated music player at the bottom of the client app.",
   "main": "index.js",
   "scripts": {
-    "test": "jest",
-    "db": "mysql -u root -p < ./database/data/schema.sql",
+    "test": "jest --coverage",
+    "db": "mysql -u root -pyourpassword < ./database/data/schema.sql",
     "build": "webpack -w",
     "start": "nodemon ./server/index.js localhost 3020",
     "seed-database": "node database/seed.js"
@@ -25,29 +25,38 @@
     "@babel/core": "^7.6.4",
     "@babel/preset-env": "^7.6.3",
     "@babel/preset-react": "^7.6.3",
+    "babel-jest": "^24.9.0",
     "babel-loader": "^8.0.6",
+    "css-loader": "^3.2.0",
     "enzyme": "^3.10.0",
-    "enzyme-adapter-react-16.1": "^1.6.2",
+    "enzyme-adapter-react-16": "^1.15.1",
     "eslint": "^6.5.1",
     "eslint-config-airbnb": "^18.0.1",
     "eslint-plugin-import": "^2.18.2",
     "eslint-plugin-jsx-a11y": "^6.2.3",
     "eslint-plugin-react": "^7.16.0",
     "eslint-plugin-react-hooks": "^1.7.0",
+    "identity-obj-proxy": "^3.0.0",
     "jest": "^24.9.0",
+    "jest-environment-enzyme": "^7.1.1",
+    "jest-enzyme": "^7.1.1",
+    "style-loader": "^1.0.0",
     "webpack": "^4.41.0",
     "webpack-cli": "^3.3.9"
   },
   "dependencies": {
+    "@babel/polyfill": "^7.6.0",
     "axios": "^0.19.0",
     "bluebird": "^3.7.0",
     "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
     "express": "^4.17.1",
+    "faker": "^4.1.0",
     "mysql": "^2.17.1",
-    "path": "^0.12.7",
     "nodemon": "^1.19.3",
+    "path": "^0.12.7",
+    "prop-types": "^15.7.2",
     "react": "^16.10.2",
-    "react-dom": "^16.10.2",
-    "faker": "^4.1.0"
+    "react-dom": "^16.10.2"
   }
 }

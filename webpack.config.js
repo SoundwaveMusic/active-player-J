@@ -13,8 +13,8 @@ module.exports = {
     rules: [
       {
         test: /\.(js|jsx)$/,
-        include: path.join(__dirname, 'client'),
-        exclude: /node_modules/,
+        //include: path.join(__dirname, 'client'),
+        exclude: /(node_modules|bower_components)/,
         use: {
           loader: 'babel-loader',
           options: {
@@ -22,6 +22,23 @@ module.exports = {
           },
         },
       },
+      // {
+      //   test:/\.css$/,
+      //   use:['style-loader','css-loader']
+      // },
+      {
+        test: /\.css$/,
+        use: [
+          'style-loader',
+          {
+            loader: 'css-loader',
+            options: {
+              importLoaders: 1,
+              modules: true
+            }
+          }
+        ]
+      }
     ],
   },
   mode: 'development',

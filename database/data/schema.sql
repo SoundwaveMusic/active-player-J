@@ -10,7 +10,7 @@ CREATE TABLE songs (
   length INT NOT NULL,
   timestamp INT DEFAULT 0,
   isliked TINYINT DEFAULT 0,
-  songfile VARCHAR(150),
+  songFile VARCHAR(150),
   title VARCHAR(150),
   artist VARCHAR(60),
   album VARCHAR(60),
@@ -18,19 +18,19 @@ CREATE TABLE songs (
   PRIMARY KEY (id)
 );
 
-CREATE TABLE upnext (
+CREATE TABLE upNext (
   position INT AUTO_INCREMENT,
-  songid INT,
-  FOREIGN KEY (songid) 
+  songId INT,
+  FOREIGN KEY (songId) 
     REFERENCES songs(id)
     ON UPDATE CASCADE,
   UNIQUE KEY (position)
 );
 
-CREATE TABLE previousplays (
+CREATE TABLE previousPlays (
   position INT AUTO_INCREMENT,
-  songid INT,
-  FOREIGN KEY (songid) 
+  songId INT,
+  FOREIGN KEY (songId) 
     REFERENCES songs(id)
     ON UPDATE CASCADE,
   UNIQUE KEY (position)

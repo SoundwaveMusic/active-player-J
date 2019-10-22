@@ -6,11 +6,11 @@ const seedData = () => {
   for (let i = 0; i < 15; i += 1) {
     // If no song at that index, use the last song (uses faker data to fill in details)
     const randomSong = {
-      songId: Math.floor(Math.random() * 999),
-      length: Math.floor(Math.random() * (500 - 100) + 100),
+      songId: Math.floor(Math.random() * 2000),
+      length: 183,
       timestamp: 0,
       isliked: Math.floor(Math.random() * 2),
-      songfile: faker.internet.url(),
+      songFile: 'https://sound-clout.s3-us-west-1.amazonaws.com/Fleas.mp3',
       title: faker.random.words(),
       artist: faker.name.findName(),
       album: faker.commerce.productName(),
@@ -18,7 +18,7 @@ const seedData = () => {
     };
     const sampleSong = exampleSongs[i] || randomSong;
     schema.songSaverAsync(sampleSong)
-      .then((results) => schema.playlistSaverAsync(results.insertId, 'upnext'))
+      // .then((results) => schema.playlistSaverAsync(results.insertId, 'upNext'))
       .then((results) => console.log('upNextGeneratorAsync result', results))
       .catch((err) => console.log('upNextGeneratorAsync err', err));
   }

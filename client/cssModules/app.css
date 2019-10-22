@@ -1,0 +1,39 @@
+.footer {
+    height: 50px;
+    font-family: 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: #333333;
+    font-size: 12px;
+    position: fixed;
+    /* position: sticky; */
+    bottom: 0;
+    width: 100%;
+    background-color: #f2f2f2;
+    border-top: .5px solid #cecece;
+}
+.container {
+    width: 1240px;
+    margin: auto;
+    background-color: #f2f2f2;
+    border-top: .5px solid #cecece;
+}
+
+.player {
+    height: 50px;
+    width: 633px;
+    display: inline-block;
+    vertical-align: top;
+    margin-left: 20px;
+    background-color: #f2f2f2;
+
+}
+
+.infoBar {
+    height: 50px;
+    width: 360px;
+    display: inline-block;
+    vertical-align: top;
+    margin-left: 8px;
+    background-color: #f2f2f2;
+    font-size: 11px;
+}
+

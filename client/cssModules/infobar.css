@@ -1,0 +1,91 @@
+.infoContainer {
+    width: 346px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #f2f2f2;
+    vertical-align: bottom;
+}
+
+.albumArt {
+    width: 32px;
+    display: inline-block;
+    height: 32px;
+    margin: 9px 8px 9px 0;
+}
+
+.albumThumbnail {
+    width: 31px;
+    height: 31px;
+}
+
+.infoGrid {
+    display: inline-grid;
+    grid-template-columns: repeat(1, 248px);
+    grid-auto-rows: 17px;
+    vertical-align: top;
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+
+.artist {
+    grid-column: 1;
+    grid-row: 1;
+    cursor: pointer;
+    color: #999999;
+    outline: none;
+}
+
+.title {
+    grid-column: 1;
+    grid-row: 2;
+    cursor: pointer;
+    outline: none;
+}
+
+.artist:hover,
+.title:hover {
+    color: black;
+}
+
+.metaDataGrid {
+    display: inline-grid;
+    grid-template-columns: repeat(2, 24px);
+    grid-auto-rows: 24px;
+    vertical-align: top;
+    margin-top: 13px;
+    margin-left: 10px;
+}
+
+.likeMeta {
+    grid-column: 1;
+    grid-row: 1;
+}
+
+.metaButton{
+    cursor: pointer;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.liked {
+    composes: likeMeta metaButton;
+    background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAxNiAxNiIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48dGl0bGU+c3RhdHNfbGlrZXNfZ3JleTwvdGl0bGU+PHBhdGggZD0iTTEwLjgwNSAzYy0yLjAyIDAtMi44MDQgMi4zNDUtMi44MDQgMi4zNDVTNy4yMTMgMyA1LjE5NiAzQzMuNDk0IDMgMS43NDggNC4wOTYgMi4wMyA2LjUxNGMuMzQ0IDIuOTUzIDUuNzI1IDYuNDc5IDUuOTYzIDYuNDg3LjIzOC4wMDggNS43MzgtMy43MjIgNS45ODgtNi41QzE0LjE4OCA0LjIwMSAxMi41MDcgMyAxMC44MDUgM3oiIGZpbGw9IiNGNTAiIGZpbGwtcnVsZT0iZXZlbm9kZCIvPjwvc3ZnPg==);
+}
+
+.like {
+    composes: likeMeta metaButton;
+    background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAxNiAxNiIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48dGl0bGU+c3RhdHNfbGlrZXNfZ3JleTwvdGl0bGU+PHBhdGggZD0iTTEwLjgwNSAzYy0yLjAyIDAtMi44MDQgMi4zNDUtMi44MDQgMi4zNDVTNy4yMTMgMyA1LjE5NiAzQzMuNDk0IDMgMS43NDggNC4wOTYgMi4wMyA2LjUxNGMuMzQ0IDIuOTUzIDUuNzI1IDYuNDc5IDUuOTYzIDYuNDg3LjIzOC4wMDggNS43MzgtMy43MjIgNS45ODgtNi41QzE0LjE4OCA0LjIwMSAxMi41MDcgMyAxMC44MDUgM3oiIGZpbGw9IiMyMjIiIGZpbGwtcnVsZT0iZXZlbm9kZCIvPjwvc3ZnPg==);
+}
+
+.upNextMeta {
+    composes: metaButton;
+    grid-column: 2;
+    grid-row: 1;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24'%3E%3Cpath fill='%23333' class='playbackSoundBadge__queueIcon' d='M6 11h12v2H6zM6 7h8v2H6zM6 15h12v2H6zM16 3v6l4-3z'%3E%3C/path%3E%3C/svg%3E");
+}
+.upNextMeta-alt {
+    composes: metaButton;
+    grid-column: 2;
+    grid-row: 1;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24'%3E%3Cpath fill='%23f50' class='playbackSoundBadge__queueIcon' d='M6 11h12v2H6zM6 7h8v2H6zM6 15h12v2H6zM16 3v6l4-3z'%3E%3C/path%3E%3C/svg%3E");
+}

@@ -3,7 +3,7 @@ const db = require('../index');
 
 module.exports = Promise.promisifyAll({
   songSaver: (song, cb) => {
-    const stmt = `INSERT INTO songs (songId, length, timestamp, isliked, songfile, title, artist, album, thumbnail) 
+    const stmt = `INSERT INTO songs (songId, length, timestamp, isliked, songFile, title, artist, album, thumbnail) 
                VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
               `;
     const songVals = [
@@ -11,7 +11,7 @@ module.exports = Promise.promisifyAll({
       song.length,
       song.timestamp,
       song.isliked,
-      song.songfile,
+      song.songFile,
       song.title,
       song.artist,
       song.album,
@@ -21,18 +21,18 @@ module.exports = Promise.promisifyAll({
       .then((results) => cb(null, results))
       .catch((err) => cb(err));
   },
-  playlistSaver: (songid, playlist, cb) => {
-    const stmt = `INSERT INTO ${playlist} (songid) 
+  playlistSaver: (songId, playlist, cb) => {
+    const stmt = `INSERT INTO ${playlist} (songId) 
                VALUES (?)
               `;
-    const songVal = [songid];
+    const songVal = [songId];
     db.queryAsync(stmt, songVal)
       .then((results) => cb(null, results))
       .catch((err) => cb(err));
   },
-  songGetter: (songid, cb) => {
+  songGetter: (songId, cb) => {
     const stmt = 'SELECT * FROM songs WHERE id = ?';
-    const songVal = [songid];
+    const songVal = [songId];
     db.queryAsync(stmt, songVal)
       .then((results) => cb(null, results))
       .catch((err) => cb(err));
@@ -43,9 +43,10 @@ module.exports = Promise.promisifyAll({
       .then((results) => cb(null, results))
       .catch((err) => cb(err));
   },
-  timestampUpdater: (songid, timestamp, cb) => {
-    const stmt = `UPDATE songs SET timestamp = ${timestamp}
-                  WHERE id = ${songid}
+  likeUpdater: (songId, like, cb) => {
+    const newStatus = like ? 0 : 1;
+    const stmt = `UPDATE songs SET isliked = ${newStatus}
+                  WHERE songId = ${songId}
                   `;
     db.queryAsync(stmt)
       .then((results) => cb(null, results))

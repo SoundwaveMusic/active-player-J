@@ -1,0 +1,68 @@
+.timeBox {
+    height: 50px;
+    width: 50px;
+    display: inline-block;
+}
+
+.currentTime {
+    margin-top: 17.5px;
+    float: right;
+    color: #FF5500;
+}
+
+.remaining {
+    margin-top: 17.5px;
+    float: left;
+    cursor: pointer;
+    outline: none;
+}
+
+.timelineContainer {
+    display: inline-block;
+    height: 50px;
+    width: 514px;
+    margin: 0 9px;
+    vertical-align: top;
+    cursor: pointer;
+    outline: none;
+}
+
+.timeline {
+    display: inline-block;
+    height: 1px;
+    width: 514px;
+    background-color: #cecece;
+    margin-top: 24px;
+}
+
+.animatedTimeline {
+    display: inline-block;
+    vertical-align: top;
+    height: 1.5px;
+    background-color: #ea5138;
+    transition: width linear;
+    position: relative;
+}
+
+.animatedTimeline:hover {
+    background-color: transparent;
+}
+
+.progressDot {
+    background-color: #ea5138;
+    display: inline-block;
+    position: absolute;
+    right: -4px;
+    top: -4px;
+    bottom: 16px;
+    height: 8px;
+    width: 8px;
+    border-radius: 4px;
+    visibility: hidden;
+    z-index: 4;
+    transition: margin-left .2s ease-in;
+}
+
+.progressVisible {
+    visibility: visible;
+}
