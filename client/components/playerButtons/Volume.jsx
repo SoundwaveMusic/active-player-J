@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import styles from '../../cssModules/button.css'
 
 class Volume extends React.Component {
   constructor(props) {
@@ -26,7 +27,7 @@ class Volume extends React.Component {
       <span>
         <button
           type="button"
-          className={isMuted ? 'mute button' : 'volume button'}
+          className={isMuted ? styles.mute : styles.volume}
           onClick={this.muteToggle}
           aria-label={isMuted ? 'un-mute' : 'mute'}
         />

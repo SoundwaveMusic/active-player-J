@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import MetaData from './MetaData';
+import styles from '../../cssModules/infobar.css'
 
 
 function InfoBar({ playerSong, like }) {
@@ -9,20 +10,20 @@ function InfoBar({ playerSong, like }) {
   };
 
   return (
-    <div className="infoContainer">
+    <div className={styles.infoContainer}>
       <div
-        className="albumArt"
+        className={styles.albumArt}
         role="button"
         onClick={() => click('album', playerSong.album)}
         onKeyDown={() => click('album', playerSong.album)}
         tabIndex="-1"
         aria-label="album"
       >
-        <img className="albumThumbnail" alt="album artwork" src={playerSong.thumbnail} />
+        <img className={styles.albumThumbnail} alt="album artwork" src={playerSong.thumbnail} />
       </div>
-      <div className="infoGrid">
+      <div className={styles.infoGrid}>
         <div
-          className="artist"
+          className={styles.artist}
           role="button"
           onClick={() => click('artist', playerSong.artist)}
           onKeyDown={() => click('artist', playerSong.artist)}
@@ -32,7 +33,7 @@ function InfoBar({ playerSong, like }) {
           {playerSong.artist}
         </div>
         <div
-          className="title"
+          className={styles.title}
           role="button"
           onClick={() => click('song', playerSong.title)}
           onKeyDown={() => click('song', playerSong.title)}

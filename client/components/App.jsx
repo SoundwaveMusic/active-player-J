@@ -56,7 +56,7 @@ class App extends React.Component {
               && <Player length={upNext[0].length} timestamp={timestamp} scrub={this.scrub} />}
           </div>
           {songFile && <Volume songFile={songFile} />}
-          <div className="infoBar">
+          <div className={styles.infoBar}>
             {upNext[0]
               && <InfoBar playerSong={upNext[0]} like={this.like} />}
           </div>

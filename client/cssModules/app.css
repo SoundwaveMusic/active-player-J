@@ -26,3 +26,14 @@
     background-color: #f2f2f2;
 
 }
+
+.infoBar {
+    height: 50px;
+    width: 360px;
+    display: inline-block;
+    vertical-align: top;
+    margin-left: 8px;
+    background-color: #f2f2f2;
+    font-size: 11px;
+}
+
