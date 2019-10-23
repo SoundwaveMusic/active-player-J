@@ -64,7 +64,6 @@ const playerHelpers = {
     }
   },
   scrub(newTimestamp) {
-    console.log('newTimestamp: ', newTimestamp)
     // Change the value of currentTime to the new timestamp
     const { songFile } = this.state;
     songFile.currentTime = newTimestamp;

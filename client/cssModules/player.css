@@ -44,9 +44,13 @@
     position: relative;
 }
 
-.animatedTimeline:hover {
+/* .animatedTimeline:hover {
     background-color: transparent;
 }
+
+.animatedTimeline:active {
+    background-color: #ea5138;
+} */
 
 .progressDot {
     background-color: #ea5138;

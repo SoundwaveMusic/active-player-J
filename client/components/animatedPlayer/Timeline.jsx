@@ -68,7 +68,7 @@ class Timeline extends React.Component {
     return (
       <div
         className={styles.timelineContainer}
-        onMouseOver={this.showProgressDot}
+        onMouseEnter={this.showProgressDot}
         onFocus={this.showProgressDot}
         onMouseDown={startScrubbing}
         onMouseUp={endScrubbing}
