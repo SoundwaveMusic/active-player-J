@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "jest --coverage",
-    "db": "mysql -u root -pyourpassword < ./database/data/schema.sql",
+    "db": "mysql -u root -p < ./database/data/schema.sql",
+    "db-nopassword": "mysql -u root < ./database/data/schema.sql",
     "build": "webpack -w",
     "start": "nodemon ./server/index.js localhost 3020",
     "seed-database": "node database/seed.js"
