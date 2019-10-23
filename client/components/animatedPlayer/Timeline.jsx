@@ -7,6 +7,7 @@ class Timeline extends React.Component {
     super(props);
     this.state = { progressDotStyles: {} };
     this.showProgressDot = this.showProgressDot.bind(this);
+    this.getTimestamp = this.getTimestamp.bind(this);
     this.updateTimestamp = this.updateTimestamp.bind(this);
     this.hideProgressDot = this.hideProgressDot.bind(this);
   }
@@ -17,8 +18,12 @@ class Timeline extends React.Component {
     });
   }
 
-  updateTimestamp(e) {
-    const { length, scrub } = this.props;
+  hideProgressDot() {
+    this.setState({ progressDotStyles: { visibility: 'hidden' } });
+  }
+
+  getTimestamp(e) {
+    const { length } = this.props;
     const boundingRectangle = document.getElementsByClassName(styles.timelineContainer)[0].getBoundingClientRect();
     const leftTlineBound = boundingRectangle.left;
     const rightTlineBound = boundingRectangle.right;
@@ -36,16 +41,18 @@ class Timeline extends React.Component {
     let newTimestamp = (clickLocation - leftTlineBound) / (rightTlineBound - leftTlineBound);
     // Multiply by the song length to get the new timestamp
     newTimestamp *= length;
-    scrub(newTimestamp);
-    this.showProgressDot(e);
+    return newTimestamp
   }
-
-  hideProgressDot() {
-    this.setState({ progressDotStyles: { visibility: 'hidden' } });
+  
+  updateTimestamp(e) {
+    const { scrub } = this.props;
+    const newTimestamp = this.getTimestamp(e)
+    scrub(newTimestamp);
+    // this.showProgressDot();
   }
 
   render() {
-    const { length, elapsed, startScrubbing, endScrubbing } = this.props;
+    const { length, elapsed, startScrubbing, endScrubbing, scrubTimeline } = this.props;
     const { progressDotStyles } = this.state;
 
     // Animated timeline styles
@@ -60,8 +67,8 @@ class Timeline extends React.Component {
         onFocus={this.showProgressDot}
         onMouseDown={startScrubbing}
         onMouseUp={endScrubbing}
-        onDragOverCapture={((event) => {
-          console.log(event.clientX);
+        onMouseOver={((event) => {
+          scrubTimeline(event.clientX);
           //this.updateTimestamp(event);
         }).bind(this)}
         onMouseLeave={this.hideProgressDot}

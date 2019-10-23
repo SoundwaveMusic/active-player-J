@@ -10,11 +10,19 @@ class Player extends React.Component {
     this.state = { isScrubbing: false };
     this.startScrubbing = this.startScrubbing.bind(this);
     this.endScrubbing = this.endScrubbing.bind(this);
+    this.scrubTimeline = this.scrubTimeline.bind(this);
   }
 
   startScrubbing() {this.setState( { isScrubbing: true })}
 
   endScrubbing() {this.setState( {isScrubbing: false })}
+
+  scrubTimeline(test) { 
+    const { isScrubbing } = this.state;
+    if(isScrubbing) {
+      console.log(test);
+    }
+  }
   
   render() {
     const { length, timestamp, scrub } = this.props
@@ -28,6 +36,7 @@ class Player extends React.Component {
           scrub={scrub}
           startScrubbing={this.startScrubbing}
           endScrubbing={this.endScrubbing}
+          scrubTimeline={this.scrubTimeline}
         />
         <Remaining length={length} elapsed={timestamp} />
       </div>
