@@ -7,7 +7,7 @@ import Remaining from './LengthRemainingToggle';
 class Player extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { isScrubbing: false };
+    this.state = { isScrubbing: false, scrubTimstampLocation: 0 };
     this.startScrubbing = this.startScrubbing.bind(this);
     this.endScrubbing = this.endScrubbing.bind(this);
     this.scrubTimeline = this.scrubTimeline.bind(this);
@@ -17,16 +17,16 @@ class Player extends React.Component {
 
   endScrubbing() {this.setState( {isScrubbing: false })}
 
-  scrubTimeline(test) { 
+  scrubTimeline(scrubTimstampLocation) { 
     const { isScrubbing } = this.state;
     if(isScrubbing) {
-      console.log(test);
+      this.setState({ scrubTimstampLocation });
     }
   }
   
   render() {
     const { length, timestamp, scrub } = this.props
-    console.log('State is scrubbing: ', this.state.isScrubbing);
+    console.log('State is scrubbing: ', this.state);
     return (
       <div>
         <CurrentTime elapsed={timestamp} />

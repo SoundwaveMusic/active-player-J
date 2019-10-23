@@ -7,9 +7,10 @@ class Timeline extends React.Component {
     super(props);
     this.state = { progressDotStyles: {} };
     this.showProgressDot = this.showProgressDot.bind(this);
+    this.hideProgressDot = this.hideProgressDot.bind(this);
     this.getTimestamp = this.getTimestamp.bind(this);
     this.updateTimestamp = this.updateTimestamp.bind(this);
-    this.hideProgressDot = this.hideProgressDot.bind(this);
+    this.handleScrub = this.handleScrub.bind(this);
   }
 
   showProgressDot() {
@@ -27,8 +28,6 @@ class Timeline extends React.Component {
     const boundingRectangle = document.getElementsByClassName(styles.timelineContainer)[0].getBoundingClientRect();
     const leftTlineBound = boundingRectangle.left;
     const rightTlineBound = boundingRectangle.right;
-    console.log('leftBound: ', leftTlineBound);
-    console.log('rightBound: ', rightTlineBound);
     let clickLocation = e.clientX;
     if (clickLocation < leftTlineBound) {
       clickLocation = leftTlineBound;
@@ -51,6 +50,12 @@ class Timeline extends React.Component {
     // this.showProgressDot();
   }
 
+  handleScrub(e) {
+    const { scrubTimeline } = this.props;
+    const scrubLocationTimestamp = this.getTimestamp(e);
+    scrubTimeline(scrubLocationTimestamp);
+  }
+
   render() {
     const { length, elapsed, startScrubbing, endScrubbing, scrubTimeline } = this.props;
     const { progressDotStyles } = this.state;
@@ -67,10 +72,7 @@ class Timeline extends React.Component {
         onFocus={this.showProgressDot}
         onMouseDown={startScrubbing}
         onMouseUp={endScrubbing}
-        onMouseOver={((event) => {
-          scrubTimeline(event.clientX);
-          //this.updateTimestamp(event);
-        }).bind(this)}
+        onMouseOver={this.handleScrub}
         onMouseLeave={this.hideProgressDot}
         onClick={this.updateTimestamp}
         // onKeyDown={this.updateTimestamp}
