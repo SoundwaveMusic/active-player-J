@@ -39,6 +39,7 @@ class App extends React.Component {
     const { songs, upNext, songFile, timestamp, repeat, shuffle } = this.state;
     // className={styles.test}
     return (
+      <div className={styles.sticker}>
       <footer className={styles.footer}> 
         <div className={styles.container}>
           <Button className="back" clickHandler={this.back} />
@@ -61,6 +62,7 @@ class App extends React.Component {
           </div>
         </div>
       </footer>
+      </div>
     );
   }
 }
