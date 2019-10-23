@@ -22,9 +22,11 @@ class Timeline extends React.Component {
     const boundingRectangle = document.getElementsByClassName(styles.timelineContainer)[0].getBoundingClientRect();
     const leftTlineBound = boundingRectangle.left;
     const rightTlineBound = boundingRectangle.right;
+    console.log('leftBound: ', leftTlineBound);
+    console.log('rightBound: ', rightTlineBound);
     let clickLocation = e.clientX;
-    if (clickLocation < 0) {
-      clickLocation = 0;
+    if (clickLocation < leftTlineBound) {
+      clickLocation = leftTlineBound;
     } else if (clickLocation > rightTlineBound) {
       clickLocation = rightTlineBound;
     }
@@ -54,12 +56,13 @@ class Timeline extends React.Component {
     return (
       <div
         className={styles.timelineContainer}
+        // onChange={(event) => console.log(event.clientX)}
         onMouseOver={this.showProgressDot}
         onFocus={this.showProgressDot}
         onDrag={this.updateTimestamp}
         onMouseLeave={this.hideProgressDot}
         onClick={this.updateTimestamp}
-        onKeyDown={this.updateTimestamp}
+        // onKeyDown={this.updateTimestamp}
         role="button"
         tabIndex="-1"
         aria-label="song progress bar"
