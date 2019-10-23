@@ -22,6 +22,7 @@ class App extends React.Component {
       shuffle: '',
       volume: .7
     };
+    this.mount = metaHelpers.mount.bind(this);
     this.back = playerHelpers.back.bind(this);
     this.togglePlay = playerHelpers.togglePlay.bind(this);
     this.tick = metaHelpers.tick.bind(this);
@@ -32,7 +33,7 @@ class App extends React.Component {
     this.like = metaHelpers.like.bind(this);
   }
 
-  componentDidMount() { metaHelpers.mount.call(this); }
+  componentDidMount() { this.mount() }
 
   render() {
     const { songs, upNext, songFile, timestamp, repeat, shuffle } = this.state;
