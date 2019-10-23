@@ -4,14 +4,35 @@ import CurrentTime from './CurrentTime';
 import Timeline from './Timeline';
 import Remaining from './LengthRemainingToggle';
 
-function Player({ length, timestamp, scrub }) {
-  return (
-    <div>
-      <CurrentTime elapsed={timestamp} />
-      <Timeline length={length} elapsed={timestamp} scrub={scrub} />
-      <Remaining length={length} elapsed={timestamp} />
-    </div>
-  );
+class Player extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { isScrubbing: false };
+    this.startScrubbing = this.startScrubbing.bind(this);
+    this.endScrubbing = this.endScrubbing.bind(this);
+  }
+
+  startScrubbing() {this.setState( { isScrubbing: true })}
+
+  endScrubbing() {this.setState( {isScrubbing: false })}
+  
+  render() {
+    const { length, timestamp, scrub } = this.props
+    console.log('State is scrubbing: ', this.state.isScrubbing);
+    return (
+      <div>
+        <CurrentTime elapsed={timestamp} />
+        <Timeline
+          length={length}
+          elapsed={timestamp}
+          scrub={scrub}
+          startScrubbing={this.startScrubbing}
+          endScrubbing={this.endScrubbing}
+        />
+        <Remaining length={length} elapsed={timestamp} />
+      </div>
+    );
+  }
 }
 
 Player.propTypes = {

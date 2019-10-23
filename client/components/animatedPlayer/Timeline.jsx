@@ -45,7 +45,7 @@ class Timeline extends React.Component {
   }
 
   render() {
-    const { length, elapsed } = this.props;
+    const { length, elapsed, startScrubbing, endScrubbing } = this.props;
     const { progressDotStyles } = this.state;
 
     // Animated timeline styles
@@ -56,10 +56,14 @@ class Timeline extends React.Component {
     return (
       <div
         className={styles.timelineContainer}
-        // onChange={(event) => console.log(event.clientX)}
         onMouseOver={this.showProgressDot}
         onFocus={this.showProgressDot}
-        onDrag={this.updateTimestamp}
+        onMouseDown={startScrubbing}
+        onMouseUp={endScrubbing}
+        onDragOverCapture={((event) => {
+          console.log(event.clientX);
+          //this.updateTimestamp(event);
+        }).bind(this)}
         onMouseLeave={this.hideProgressDot}
         onClick={this.updateTimestamp}
         // onKeyDown={this.updateTimestamp}
