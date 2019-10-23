@@ -23,13 +23,12 @@ const metaHelpers = {
       .catch((err) => console.log('mount err: ', err));
   },
   tick(songfile) {
-    const { songs, upNext, previousPlays, repeat, songFile } = this.state;
+    const { songs, upNext, repeat, songFile } = this.state;
     // If the song has ended
     //   1) clear the interval,
     //   2) repeat song if necessary,
     //   3) call next if possible,
     //   4) if repeating all AND at the end, restart with previousPlays
-    console.log('duration of the song: ', songFile.duration);
     const isEnded = songFile.ended;
     if (isEnded) {
       clearInterval(this.timestampID);
@@ -45,11 +44,19 @@ const metaHelpers = {
     } else {
       // Tick is called each second when playing,
       //   storing the currentTime property from the Audio element
-      this.setState({ timestamp: songfile.currentTime });
+      this.setState({ timestamp: songFile.currentTime });
     }
   },
   shuffle() {
-
+    const { shuffle } = this.state;
+    let newStatus;
+    //  check shuffle state and rotate between '' and '-alt', where '' references the default classname
+    if (shuffle === '') {
+      newStatus = '-alt';
+    } else {
+      newStatus = '';
+    }
+    this.setState({ shuffle: newStatus });
   },
   repeat() {
     const { repeat } = this.state;

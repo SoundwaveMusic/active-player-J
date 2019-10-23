@@ -3,29 +3,41 @@ import axios from 'axios';
 const playerHelpers = {
   // Current Player song will always be the first song in the next up playlist
   next() {
-    const { songFile, upNext, previousPlays, songs } = this.state;
+    const { songFile, upNext, previousPlays, songs, repeat, shuffle } = this.state;
     // stop current song with timestampId
     songFile.pause();
     clearInterval(this.timestampID);
-    // 1) Splice first song in upNext and push to previousPlays
-    previousPlays.push(upNext.shift());
-    // 2) If both upNext and songs are empty, call mount to reset state: songs, upnext songfile
-
-    if (upNext.length === 0 && songs.length === 0) {
-      this.mount();
+    // check if repeating that song
+    if (repeat === 'Song') {
+      songFile.currentTime = 0;
+      this.setState({ timestamp: 0 });
     } else {
-      // 3) Else if upNext is empty, splice first song in songs and push to upNext
-      if (upNext.length === 0) {
-        upNext.push(songs.shift());
+      // 1) Splice first song in upNext and push to previousPlays
+      previousPlays.push(upNext.shift());
+      // 2) If both upNext and songs are empty, call mount to reset state: songs, upnext songfile
+      if (upNext.length === 0 && songs.length === 0) {
+        this.mount();
+      } else {
+        // 3) If upNext is empty and  set to shuffle, grab a random song to push to upNext
+        // 4) Else if upNext is just empty, splice first song in songs and push to upNext
+        if (upNext.length === 0 && shuffle === '-alt') {
+          const randomIndex = Math.floor(Math.random() * songs.length);
+          console.log('randomIndex', randomIndex)
+          const randomSong = songs.splice(randomIndex, 1)[0];
+          console.log('randomSong', randomSong);
+          upNext.push(randomSong);
+        } else if (upNext.length === 0) {
+          upNext.push(songs.shift());
+        } 
+        // Either way, set state: songs, upNext, previousPlays, *new* songFile, timestamp 0
+        this.setState({
+          upNext,
+          previousPlays,
+          songs,
+          timestamp: 0,
+          songFile: new Audio(upNext[0].songFile),
+        });
       }
-      // Then, set state: songs, upNext, previousPlays, *new* songFile, timestamp 0
-      this.setState({
-        upNext,
-        previousPlays,
-        songs,
-        timestamp: 0,
-        songFile: new Audio(upNext[0].songFile),
-      });
     }
   },
   back() {

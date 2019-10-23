@@ -1,0 +1,3 @@
+const MYSQL_PASSWORD = 'FILL_IN_YOUR_MYSQL_PASSWORD';
+
+module.exports = MYSQL_PASSWORD;

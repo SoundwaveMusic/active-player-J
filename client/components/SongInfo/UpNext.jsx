@@ -18,7 +18,7 @@ class UpNext extends React.Component {
     const { clicked } = this.state;
     return (
       <div
-        className={clicked ? styles.upNextMeta-alt : styles.upNextMeta}
+        className={clicked ? styles.upNextMetaAlt : styles.upNextMeta}
         onClick={this.handleClick}
         onKeyDown={this.handleClick}
         role="button"

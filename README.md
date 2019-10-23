@@ -12,6 +12,7 @@ This features an animated player synced proportionally with a time-stamped locat
 
 1. [Usage](#Usage)
 1. [Requirements](#requirements)
+1. [Dependencies](#installing)
 1. [Development](#development)
 
 ## Usage
@@ -20,19 +21,35 @@ This features an animated player synced proportionally with a time-stamped locat
 
 ## Requirements
 
-An `nvmrc` file is included if using [nvm](https://github.com/creationix/nvm).
+- Node 6.13.1
 
-- Node 6.13.0
-- etc
-
-## Development
-
-### Installing Dependencies
+## Installing Dependencies
 
 From within the root directory:
 
 ```sh
-npm install -g webpack
 npm install
 ```
 
+## Development
+
+From within the root directory, do each of the following:
+
+- Run webpack to build bundle.js
+```sh
+npm run build
+```
+- Start the server at port 3020
+```sh
+npm start
+```
+- Create a copy of config.example.js
+- Save the new file as config.js and enter your mysql password or '' if not using a password
+- If using a mysql password: 
+```sh
+npm run db
+```
+- If not using a mysql password: 
+```sh
+npm run db-nopassword
+```
