@@ -1,4 +1,3 @@
-/* eslint-disable jsx-a11y/media-has-caption */
 import React from 'react';
 import metaHelpers from '../metaHelpers';
 import playerHelpers from '../playerHelpers';
@@ -9,8 +8,6 @@ import Volume from './playerButtons/Volume';
 import Player from './animatedPlayer/Player';
 import InfoBar from './SongInfo/InfoBar';
 import styles from '../cssModules/app.css';
-// import '../../public/style.css';
-
 
 class App extends React.Component {
   constructor(props) {
@@ -22,6 +19,7 @@ class App extends React.Component {
       songFile: null,
       timestamp: 0,
       repeat: '',
+      shuffle: '',
       volume: .7
     };
     this.back = playerHelpers.back.bind(this);
@@ -37,7 +35,7 @@ class App extends React.Component {
   componentDidMount() { metaHelpers.mount.call(this); }
 
   render() {
-    const { songs, upNext, songFile, timestamp, repeat } = this.state;
+    const { songs, upNext, songFile, timestamp, repeat, shuffle } = this.state;
     // className={styles.test}
     return (
       <footer className={styles.footer}> 
@@ -49,7 +47,7 @@ class App extends React.Component {
             <Pause pauseSong={() => this.togglePlay(songFile)} />
           )}
           <Button className="next" clickHandler={this.next} />
-          <Button className="shuffle" clickHandler={() => alert('Clicked shuffle!')} />
+          <Button className={`shuffle${shuffle}`} clickHandler={this.shuffle} />
           <Button className={`repeat${repeat}`} clickHandler={this.repeat} />
           <div className={styles.player}>
             {songFile
