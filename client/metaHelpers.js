@@ -5,7 +5,6 @@ const metaHelpers = {
   mount() {
     axios.get('http://localhost:3020/songs')
       .then((results) => {
-        console.log('get songs reesults: ', results.data);
         // 1) Get all the songs as the default playlist
         const songs = results.data;
         // 2) Splice out first song and push to upNext playlist
@@ -19,7 +18,6 @@ const metaHelpers = {
           songFile: new Audio(upNext[0].songFile),
         });
       })
-      .then(() => console.log('state', this.state))
       .catch((err) => console.log('mount err: ', err));
   },
   tick(songfile) {
@@ -85,7 +83,6 @@ const metaHelpers = {
         }
         return this.setState({ upNext, songs: results.data });
       })
-      .then(() => console.log('state after like ', this.state))
       .catch((err) => console.log('like err', err));
   },
   //  *IF TIME REFACTOR:
