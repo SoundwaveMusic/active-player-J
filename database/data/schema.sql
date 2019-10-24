@@ -1,8 +1,8 @@
-DROP DATABASE IF EXISTS soundClout;
+DROP DATABASE IF EXISTS soundCloutPlayer;
 
-CREATE DATABASE soundClout;
+CREATE DATABASE soundCloutPlayer;
 
-USE soundClout;
+USE soundCloutPlayer;
 
 CREATE TABLE songs (
   id INT NOT NULL AUTO_INCREMENT,
