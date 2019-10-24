@@ -22,9 +22,7 @@ const playerHelpers = {
         // 4) Else if upNext is just empty, splice first song in songs and push to upNext
         if (upNext.length === 0 && shuffle === '-alt') {
           const randomIndex = Math.floor(Math.random() * songs.length);
-          console.log('randomIndex', randomIndex)
           const randomSong = songs.splice(randomIndex, 1)[0];
-          console.log('randomSong', randomSong);
           upNext.push(randomSong);
         } else if (upNext.length === 0) {
           upNext.push(songs.shift());
