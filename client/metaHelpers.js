@@ -16,7 +16,7 @@ const metaHelpers = {
           songs,
           upNext,
           songFile: new Audio(upNext[0].songFile),
-        });
+        })
       })
       .catch((err) => console.log('mount err: ', err));
   },
@@ -84,7 +84,7 @@ const metaHelpers = {
         return this.setState({ upNext, songs: results.data });
       })
       .catch((err) => console.log('like err', err));
-  },
+  }
   //  *IF TIME REFACTOR:
   //  *Get nextUp songIds, use Promise.each to:
   //    *use '/songs/:id' to get the song obj

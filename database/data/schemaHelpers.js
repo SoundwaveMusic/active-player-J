@@ -33,6 +33,7 @@ module.exports = Promise.promisifyAll({
   songGetter: (songId, cb) => {
     const stmt = 'SELECT * FROM songs WHERE id = ?';
     const songVal = [songId];
+    console.log('function cb', cb.toString())
     db.queryAsync(stmt, songVal)
       .then((results) => cb(null, results))
       .catch((err) => cb(err));
