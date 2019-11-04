@@ -21,7 +21,7 @@ const playerHelpers = {
         // 3) If upNext is empty and  set to shuffle, grab a random song to push to upNext
         // 4) Else if upNext is just empty, splice first song in songs and push to upNext
         if (upNext.length === 0 && shuffle === '-alt') {
-          const randomIndex = Math.floor(Math.random() * songs.length);
+          const randomIndex = Macth.floor(Math.random() * songs.length);
           const randomSong = songs.splice(randomIndex, 1)[0];
           upNext.push(randomSong);
         } else if (upNext.length === 0) {

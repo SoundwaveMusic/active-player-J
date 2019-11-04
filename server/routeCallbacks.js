@@ -20,5 +20,5 @@ module.exports = {
     schema.playlistSaverAsync(req.body.id, req.params.playlist)
       .then((results) => res.status(201).send(results))
       .catch((err) => res.status(400).send(err));
-  },
+  }
 };
