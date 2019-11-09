@@ -18,13 +18,13 @@ const metaHelpers = {
         return this.setState({
           songs,
           upNext,
-          songFile: new Audio(upNext[0].songFile),
+          songFile: new Audio(upNext[0].songfile),
         })
       })
       .catch((err) => console.log('mount err: ', err));
   },
-  tick(songfile) {
-    const { songs, upNext, repeat, songFile } = this.state;
+  tick(songFile) {
+    const { songs, upNext, repeat } = this.state;
     // If the song has ended
     //   1) clear the interval,
     //   2) repeat song if necessary,

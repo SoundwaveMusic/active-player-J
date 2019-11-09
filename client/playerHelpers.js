@@ -33,7 +33,7 @@ const playerHelpers = {
           previousPlays,
           songs,
           timestamp: 0,
-          songFile: new Audio(upNext[0].songFile),
+          songFile: new Audio(upNext[0].songfile),
         });
       }
     }
@@ -52,7 +52,7 @@ const playerHelpers = {
       upNext,
       previousPlays,
       timestamp: 0,
-      songFile: new Audio(upNext[0].songFile),
+      songFile: new Audio(upNext[0].songfile),
     });
   },
   togglePlay(songFile) {
