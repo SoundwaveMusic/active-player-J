@@ -22,21 +22,20 @@ CREATE TABLE playlist (
 
 -- schema for cassandra
 CREATE TABLE song (
-  song_id int PRIMARY KEY,
+  song_id UUID,
+  list_id int,
   songLength int,
   isLiked smallint,
   songFile varchar,
   title varchar,
   artist varchar,
   album varchar,
-  thumbnail varchar
+  thumbnail varchar,
+  PRIMARY KEY (list_id, song_id)
 )
 
-CREATE TABLE playlist (
-  playlist_id uuid PRIMARY KEY,
-  songId int,
-  listSongId int
-)
+--insert into song (song_id, list_id, songlength, isliked, songfile, title, artist, album, thumbnail) values 
+
 
 
 

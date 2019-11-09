@@ -19,3 +19,5 @@ coverage/lcov-report/index.html
 database/playListsData.csv
 
 database/songsData.csv
+
+database/playlist.csv
