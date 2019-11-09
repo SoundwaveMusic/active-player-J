@@ -1,24 +1,41 @@
 const schema = require('../database/data/schemaHelpers');
+const db = require('../database/index')
+
 
 module.exports = {
   getSong: (req, res) => {
-    schema.songGetterAsync(req.params.id)
-      .then((results) => res.status(200).send(results))
-      .catch((err) => res.status(404).send(err));
-  },
-  getPlaylist: (req, res) => {
-    schema.playlistGetterAsync(req.params.playlist)
-      .then((results) => res.status(200).send(results))
-      .catch((err) => res.status(404).send(err));
+    db.query(`SELECT * FROM song INNER JOIN playlist ON song.song_id = playlist.listsongid WHERE playlist.songid = ${req.params.id}`, ((err, data) => {
+      if(err) {
+        res.send(500)
+      } else {
+        res.send(data.rows)
+      }
+    }))
   },
   likeEntry: (req, res) => {
-    schema.likeUpdaterAsync(req.params.songId, req.body.isliked)
-      .then((results) => res.status(200).send(results))
-      .catch((err) => res.status(404).send(err));
+    db.query(`UPDATE song SET isliked = ${req.body.isliked} WHERE song_id = ${Number(req.params.songId)}`, ((err, data) => {
+      if(err) {
+        console.log(err)
+      } else {
+        res.send(data.rows)
+      }
+    }))
   },
   playlistEntry: (req, res) => {
-    schema.playlistSaverAsync(req.body.id, req.params.playlist)
-      .then((results) => res.status(201).send(results))
-      .catch((err) => res.status(400).send(err));
+    db.query(`INSERT INTO playlist(songId, listSongId) VALUES (${req.body.listId}, ${Number(req.params.songId)})`, ((err,data) => {
+      if(err) {
+        console.log(err)
+      } else {
+        res.send(data.rows)
+      }
+    }))
+  }, playlistDelete: (req, res) => {
+    db.query(`DELETE FROM playlist WHERE playlist_id = ${req.params.listId}`, ((err,data) => {
+      if(err) {
+        console.log(err)
+      } else {
+        res.send(data.rows)
+      }
+    }))
   }
 };

@@ -17,11 +17,10 @@ let songOption = [
   'https://sound-clout.s3-us-west-1.amazonaws.com/Timeless.mp3'
 ]
 
-function getSong (id) {
+function getSong () {
   let songInfo = [];
   let randomIndex = faker.random.number({ min:0, max: 10 })
   songInfo.push (
-    id,
     faker.random.number({ min: 100, max: 900 }),
     Math.floor(Math.random() * 2),
     songOption[randomIndex],
@@ -34,9 +33,8 @@ function getSong (id) {
 }
 
 function getPlayList (id) {
-  let numberOfSongs = faker.random.number({ min: 5, max: 10 })
   let list = [];
-  for (let j = 0; j < numberOfSongs; j++) {
+  for (let j = 0; j < 5; j++) {
     let playlist = []
     let songId = faker.random.number({ min: 1, max: 10000000 })
     playlist.push(id, songId)
@@ -72,7 +70,7 @@ function getPlayList (id) {
   function writeSongFile() {
     let ok1 = true;
     do {
-      let song = getSong(dataSet1).join(',') + "\n"
+      let song = getSong().join(',') + "\n"
       dataSet1 -= 1;
       if (dataSet1 === 0) {
         songsData.write(song);
@@ -113,3 +111,4 @@ function getPlayList (id) {
     //   .catch((err) => console.log('upNextGeneratorAsync err', err));
 
     //COPY song(songLength, isLiked, songFile, title, artist, album, thumbnail) FROM '~/programing/hrext-Junior/soundclout-active-player-module/database/songsData.csv' DELIMITER ',';
+

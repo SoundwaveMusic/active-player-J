@@ -1,9 +1,12 @@
 import axios from 'axios';
 
+const urlParams = new URLSearchParams(window.location.search);
+const playlistId = urlParams.get('id');
+
 const metaHelpers = {
   // Current Player song will always be the first song in the next up playlist
   mount() {
-    axios.get('http://localhost:3020/songs')
+    axios.get(`http://localhost:3020/songs/${playlistId}`)
       .then((results) => {
         // 1) Get all the songs as the default playlist
         const songs = results.data;
@@ -72,16 +75,13 @@ const metaHelpers = {
   like(songId, isLiked) {
     const { upNext } = this.state;
     //  Post to the "/like:songId" route to toggle like status
-    axios.post(`http://localhost:3020/like/${songId}`, { isliked: isLiked })
-      .then(() => axios.get('http://localhost:3020/songs'))
-      .then((results) => {
-        const songs = results.data;
+    axios.put(`http://localhost:3020/like/${songId}`, { isliked: !isLiked })
+      .then(() => {
         // if songId is current player song, toggle isliked to re-render "like" status
-        if (songId === upNext[0].songId) {
-          const likeStatus = upNext[0].isliked;
-          upNext[0].isliked = likeStatus ? 0 : 1;
+        if (songId === upNext[0].song_id) {
+          upNext[0].isliked = !isLiked
         }
-        return this.setState({ upNext, songs: results.data });
+        return this.setState({ upNext });
       })
       .catch((err) => console.log('like err', err));
   }

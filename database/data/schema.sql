@@ -1,10 +1,10 @@
--- schema for postgreSQL
+-- schema for postgreSQL (songs/song)
 DROP DATABASE [IF EXISTS] songs;
 
 CREATE DATABASE [IF NOT EXISTS] songs;
 
 CREATE TABLE song (
-  song_id INTEGER PRIMARY KEY,
+  song_id SERIAL PRIMARY KEY,
   songLength INTEGER,
   isLiked BOOLEAN NOT NULL,
   songFile VARCHAR (355),
@@ -20,62 +20,4 @@ CREATE TABLE playlist (
   listSongId INTEGER REFERENCES song(song_id)
 );
 
--- schema for cassandra
-CREATE TABLE song (
-  song_id UUID,
-  list_id int,
-  songLength int,
-  isLiked smallint,
-  songFile varchar,
-  title varchar,
-  artist varchar,
-  album varchar,
-  thumbnail varchar,
-  PRIMARY KEY (list_id, song_id)
-)
-
 --insert into song (song_id, list_id, songlength, isliked, songfile, title, artist, album, thumbnail) values 
-
-
-
-
-
-
-
--- DROP DATABASE IF EXISTS soundCloutPlayer;
-
--- CREATE DATABASE soundCloutPlayer;
-
--- USE soundCloutPlayer;
-
--- CREATE TABLE songs
---   id INT NOT NULL AUTO_INCREMENT,
---   songId INT NOT NULL,
---   length INT NOT NULL,
---   timestamp INT DEFAULT 0,
---   isliked TINYINT DEFAULT 0,
---   songFile VARCHAR(150),
---   title VARCHAR(150),
---   artist VARCHAR(60),
---   album VARCHAR(60),
---   thumbnail VARCHAR(150),
---   PRIMARY KEY (id)
--- );
-
--- CREATE TABLE upNext (
---   position INT AUTO_INCREMENT,
---   songId INT,
---   FOREIGN KEY (songId) 
---     REFERENCES songs(id)
---     ON UPDATE CASCADE,
---   UNIQUE KEY (position)
--- );
-
--- CREATE TABLE previousPlays (
---   position INT AUTO_INCREMENT,
---   songId INT,
---   FOREIGN KEY (songId) 
---     REFERENCES songs(id)
---     ON UPDATE CASCADE,
---   UNIQUE KEY (position)
--- );

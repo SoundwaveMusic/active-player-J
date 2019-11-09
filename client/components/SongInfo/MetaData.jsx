@@ -16,7 +16,7 @@ function MetaData({ songId, isLiked, like }) {
 
 MetaData.propTypes = {
   songId: PropTypes.number.isRequired,
-  isLiked: PropTypes.number.isRequired,
+  isLiked: PropTypes.bool.isRequired,
   like: PropTypes.func.isRequired,
 };
 

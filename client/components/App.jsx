@@ -52,7 +52,7 @@ class App extends React.Component {
           <Button className={`repeat${repeat}`} clickHandler={this.repeat} />
           <div className={styles.player}>
             {songFile
-              && <Player length={upNext[0].length} timestamp={timestamp} scrub={this.scrub} />}
+              && <Player length={upNext[0].songlength} timestamp={timestamp} scrub={this.scrub} />}
           </div>
           {songFile && <Volume songFile={songFile} />}
           <div className={styles.infoBar}>

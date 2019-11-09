@@ -1,13 +1,15 @@
-const mysql = require('mysql');
-const Promise = require('bluebird');
-const password = require('../config.js')
+const { Pool } = require('pg')
+const pool = new Pool({
+  host: 'localhost',
+  database: 'songs',
+  port: 5432,
+})
 
-const db = mysql.createConnection({
-  user: 'root',
-  password: password,
-  database: 'soundCloutPlayer',
-});
+pool.on('error', (err) => {
+  console.log(err)
+})
 
-Promise.promisifyAll(db);
+pool.connect()
+module.exports = pool;
 
-module.exports = db;
+
