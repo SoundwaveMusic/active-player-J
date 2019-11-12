@@ -21,7 +21,7 @@ function Like({ songId, isLiked, like }) {
 
 Like.propTypes = {
   songId: PropTypes.number.isRequired,
-  isLiked: PropTypes.number.isRequired,
+  isLiked: PropTypes.bool.isRequired,
   like: PropTypes.func.isRequired,
 };
 
