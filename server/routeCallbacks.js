@@ -35,5 +35,14 @@ module.exports = {
         res.send(data.rows)
       }
     }))
+  }, testGet: (req, res) => {
+    let randomId = Math.floor(Math.random() * 10000000) + 1;
+    bd.query(`SELECT * FROM song INNER JOIN playlist ON song.song_id = playlist.listsongid WHERE playlist.songid = ${randomId}`, ((err, data) => {
+      if(err) {
+        res.send(500)
+      } else {
+        res.send(data.rows)
+      }
+    }))
   }
 };
