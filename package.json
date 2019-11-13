@@ -8,6 +8,7 @@
     "db": "mysql -u root -p < ./database/data/schema.sql",
     "db-nopassword": "mysql -u root < ./database/data/schema.sql",
     "build": "webpack -w",
+    "production": "webpack -p",
     "start": "NODE_ENV=production node ./server/index.js",
     "seed-database": "node database/seed.js"
   },

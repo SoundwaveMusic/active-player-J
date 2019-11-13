@@ -21,3 +21,11 @@ database/playListsData.csv
 database/songsData.csv
 
 database/playlist.csv
+
+newrelic.js
+
+newrelic_agent.log
+
+database/postgres-config.js
+
+
