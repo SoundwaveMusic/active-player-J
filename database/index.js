@@ -1,9 +1,16 @@
 const { Pool } = require('pg')
-const pool = new Pool({
-  host: 'localhost',
-  database: 'songs',
-  port: 5432,
-})
+const config = require('./postgres-config.js')
+let pool;
+
+if (process.env.NODE_ENV === 'production') {
+  pool = new Pool(config)
+} else {
+  pool = new Pool({
+    host: 'localhost',
+    database: 'songs',
+    port: 5432,
+  })
+}
 
 pool.on('error', (err) => {
   console.log(err)

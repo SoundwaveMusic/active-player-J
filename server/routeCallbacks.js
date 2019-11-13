@@ -1,6 +1,4 @@
-const schema = require('../database/data/schemaHelpers');
 const db = require('../database/index')
-
 
 module.exports = {
   getSong: (req, res) => {
