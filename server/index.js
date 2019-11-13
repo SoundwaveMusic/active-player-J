@@ -14,6 +14,8 @@ app.use(cors());
 
 app.get('/songs/:id', cb.getSong);
 
+app.get('/test', cb.testGet)
+
 app.put('/like/:songId',jsonParser, cb.likeEntry);
 
 app.post('/playlist/:songId', jsonParser, cb.playlistEntry);
